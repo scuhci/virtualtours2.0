@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-import { IContext, IDialogUser } from '../interfaces';
-import { AppContext } from '../AppContext';
+import { IDialogUser } from '../interfaces';
 import styled from '@emotion/styled';
 
 const styles = {
   root:  {
+    height: '800px',
     width: '100%',
     alignItems: 'stretch',
     flexGrow: 1,
-    height: '100%',
     marginLeft: '8px',
     marginRight: '8px',
   },
   frame: {
-    height: '100%',
+    height: '800px',
     width: '100%',
   },
 };
@@ -30,8 +29,7 @@ interface State {
 }
 
 export class FrameView extends Component<Props, State> {
-  context: IContext;
-  static contextType = AppContext;
+
 
   constructor(props: Props){
     super(props);
@@ -41,11 +39,6 @@ export class FrameView extends Component<Props, State> {
   }
 
   componentDidMount() {
-    this.context.frameOverlay.subscribe((user: IDialogUser) => {
-      this.setState({
-        user,
-      });
-    });
   }
   
   public render() {
