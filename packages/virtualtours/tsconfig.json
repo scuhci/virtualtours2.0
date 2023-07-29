@@ -3,7 +3,9 @@
   "compilerOptions": {
     "jsx": "react",
     "baseUrl": ".",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
   },
   "include": [
     "./src/**/**/*"
