@@ -6,6 +6,8 @@ import { createGeoFactoryClosure, geoFactoryType } from '../scene-components/Geo
 import { createNavPathClosure, navPathType } from '../scene-components/NavPathComponents';
 import { randomColor } from '../util/colorUtil';
 import sweeps from '../../assets/sweeps.json';
+import sourceDescs from '../../assets/sources.json';
+import { clearMessage, setMessage } from "../util/msgUtil";
 interface Props { }
 interface State { }
 export const ModelSid = 'eE6srFdgFSR';
@@ -44,7 +46,36 @@ export class MainView extends Component<Props, State> {
   }
   async componentDidMount() {
     this.sdk = await GetSDK('sdk-iframe', this.sdkKey);
-    console.log(this.sdk);
+    const sensor = await this.sdk.Sensor.createSensor(this.sdk.Sensor.SensorType.CAMERA);
+    sensor.showDebug(true);
+    sensor.readings.subscribe({
+      onCollectionUpdated(sourceCollection: any) {
+        const inRange: any[] = [];
+        for (const [source, reading] of sourceCollection) {
+          if (reading.inRange) {
+            const search = inRange.find((element) => {
+              return element === source.userData.id;
+            });
+            if (!search) {
+              inRange.push(source.userData.id);
+            }
+          }
+          console.log(`sensor id: ${source.userData.id} inRange:${reading.inRange} inView:${reading.inView}`);
+        }
+        if (inRange.length > 0) {
+          setMessage(inRange.toString());
+        } else {
+          clearMessage();
+        }
+      }
+    });
+    const sourcePromises = [];
+    for (const desc of sourceDescs) {
+      sourcePromises.push(this.sdk.Sensor.createSource(desc.type, desc.options));
+    }
+    const sources = await Promise.all(sourcePromises);
+    sensor.addSource(...sources);
+
     await Promise.all([
       this.sdk.Scene.register(geoFactoryType, createGeoFactoryClosure(this.sdk)),
       this.sdk.Scene.register(navPathType, createNavPathClosure(this.sdk))
