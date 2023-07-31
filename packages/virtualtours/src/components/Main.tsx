@@ -6,8 +6,12 @@ import { createGeoFactoryClosure, geoFactoryType } from '../scene-components/Geo
 import { createNavPathClosure, navPathType } from '../scene-components/NavPathComponents';
 import { randomColor } from '../util/colorUtil';
 import sweeps from '../../assets/sweeps.json';
+import signs from '../../assets/signs.json';
 import sourceDescs from '../../assets/sources.json';
+import sidestories from '../../assets/sidestories.json';
 import { clearMessage, setMessage } from "../util/msgUtil";
+import { createSignClosure, signType } from "../scene-components/SignComponent";
+import { createPathClosure, pathType } from "../scene-components/FloorPathComponent";
 interface Props { }
 interface State { }
 export const ModelSid = 'eE6srFdgFSR';
@@ -78,7 +82,9 @@ export class MainView extends Component<Props, State> {
 
     await Promise.all([
       this.sdk.Scene.register(geoFactoryType, createGeoFactoryClosure(this.sdk)),
-      this.sdk.Scene.register(navPathType, createNavPathClosure(this.sdk))
+      this.sdk.Scene.register(navPathType, createNavPathClosure(this.sdk)),
+      this.sdk.Scene.register(pathType, createPathClosure(this.sdk)),
+      this.sdk.Scene.register(signType, createSignClosure(this.sdk)),
     ])
     this.addBox();
     const initObj = {
@@ -104,6 +110,15 @@ export class MainView extends Component<Props, State> {
     const sweep_nodes = await this.sdk.Scene.deserialize(JSON.stringify(sweeps));
     for (let i = 0; i < sweep_nodes.length; ++i) {
       sweep_nodes[i].start();
+    }
+    const sign_nodes = await this.sdk.Scene.deserialize(JSON.stringify(signs));
+    for (let i = 0; i < sign_nodes.length; ++i) {
+      sign_nodes[i].start();
+    }
+    const side_story_nodes = await this.sdk.Scene.deserialize(JSON.stringify(sidestories));
+    for (let i = 0; i < side_story_nodes.length; ++i) {
+      side_story_nodes[i].position.set(side_story_nodes[i].position.x, 0.0400285530090332, side_story_nodes[i].position.z);
+      side_story_nodes[i].start();
     }
   }
 
