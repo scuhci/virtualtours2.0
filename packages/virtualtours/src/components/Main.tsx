@@ -9,9 +9,13 @@ import sweeps from '../../assets/sweeps.json';
 import signs from '../../assets/signs.json';
 import sourceDescs from '../../assets/sources.json';
 import sidestories from '../../assets/sidestories.json';
+import mainstories from '../../assets/mainstories.json';
+import hotspots from '../../assets/hotspots.json';
 import { clearMessage, setMessage } from "../util/msgUtil";
 import { createSignClosure, signType } from "../scene-components/SignComponent";
 import { createPathClosure, pathType } from "../scene-components/FloorPathComponent";
+import { getImage } from "../util/CustomizeTags";
+import icon2 from '../../assets/images/tags/big1.jpg';
 interface Props { }
 interface State { }
 export const ModelSid = 'eE6srFdgFSR';
@@ -21,9 +25,11 @@ export class MainView extends Component<Props, State> {
   private sdk: any = null;
   private queryString: string = "";
   private sdkKey: string = sdkKey;
+  private isMobile: boolean = false;
 
   constructor(props: Props) {
     super(props);
+    this.isMobile = window.matchMedia("(min-width: 768px)").matches;
     const urlParams = new URLSearchParams(window.location.search);
     if (!urlParams.has('m')) {
       urlParams.set('m', ModelSid);
@@ -48,8 +54,50 @@ export class MainView extends Component<Props, State> {
     node4.position.set(-32.678383074276525, 0.9582876760621081, -24.83219463891109);
     node4.start();
   }
+  private addMattertagNode1 = (sdk: any) => {
+    let matterTags: any = [];
+    hotspots.map((e) => {
+      matterTags.push({
+        label: e.title,
+        description: e.description,
+        anchorPosition: {
+          x: e.positionX,
+          y: e.positionY,
+          z: e.positionZ,
+        },
+        stemVector: { x: e.stemVectorX, y: e.stemVectorY, z: e.stemVectorZ },
+        mediaType: e.type,
+        mediaSrc: e.url,
+        media: {
+          type: "mattertag.media." + e.type,
+          src: e.url,
+        }
+      });
+      return 0;
+    }
+    );
+    // @ts-ignore 
+
+    sdk.Mattertag.add(matterTags).then(function (mattertagIds) {
+      console.log(mattertagIds);
+      sdk.Mattertag.getData()
+        .then(function (mattertags: any) {
+          for (let i = 0; i < matterTags.length; i++) {
+            window.matchMedia("(min-width: 768px)").matches ? sdk.Asset.registerTexture(`${mattertags[i].sid}1`, getImage(mattertags[i].label)) : sdk.Mattertag.registerIcon(`${mattertags[i].sid}1`, icon2);
+            sdk.Mattertag.editIcon(mattertags[i].sid, `${mattertags[i].sid}1`);
+          }
+
+        }).catch(function (error: any) {
+          console.log(error)
+        });
+    })
+  };
+
+
   async componentDidMount() {
     this.sdk = await GetSDK('sdk-iframe', this.sdkKey);
+    console.log(this.isMobile);
+    this.addMattertagNode1(this.sdk);
     const sensor = await this.sdk.Sensor.createSensor(this.sdk.Sensor.SensorType.CAMERA);
     sensor.showDebug(true);
     sensor.readings.subscribe({
@@ -119,6 +167,11 @@ export class MainView extends Component<Props, State> {
     for (let i = 0; i < side_story_nodes.length; ++i) {
       side_story_nodes[i].position.set(side_story_nodes[i].position.x, 0.0400285530090332, side_story_nodes[i].position.z);
       side_story_nodes[i].start();
+    }
+    const main_story_nodes = await this.sdk.Scene.deserialize(JSON.stringify(mainstories));
+    for (let i = 0; i < main_story_nodes.length; ++i) {
+      main_story_nodes[i].position.set(main_story_nodes[i].position.x, 0.0400285530090332, main_story_nodes[i].position.z);
+      main_story_nodes[i].start();
     }
   }
 

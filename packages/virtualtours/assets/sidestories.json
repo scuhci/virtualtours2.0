@@ -31,6 +31,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 1"
 						},
 						"events": {
@@ -70,6 +71,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 2"
 						},
 						"events": {
@@ -109,6 +111,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 3"
 						},
 						"events": {
@@ -148,6 +151,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 4"
 						},
 						"events": {
@@ -187,6 +191,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 5"
 						},
 						"events": {
@@ -226,6 +231,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 6"
 						},
 						"events": {
@@ -265,6 +271,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 7"
 						},
 						"events": {
@@ -304,6 +311,7 @@
 							"pRotationZ": 1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 8"
 						},
 						"events": {
@@ -343,6 +351,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 9"
 						},
 						"events": {
@@ -382,6 +391,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 9"
 						},
 						"events": {
@@ -421,6 +431,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 10"
 						},
 						"events": {
@@ -460,6 +471,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 11"
 						},
 						"events": {
@@ -499,6 +511,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 12"
 						},
 						"events": {
@@ -538,6 +551,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
+							"opacity": 0.6,
 							"name": "room 13"
 						},
 						"events": {

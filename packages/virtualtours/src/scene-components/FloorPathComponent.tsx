@@ -4,6 +4,7 @@ interface Inputs {
     image: string,
     width: number,
     height: number,
+    opacity: number,
     pRotationX: number,
     pRotationY: number,
     pRotationZ: number,
@@ -17,13 +18,13 @@ class FloorPathComponent extends SceneComponent {
         image: "",
         width: 1.0,
         height: 1.0,
+        opacity: 1.0,
         pRotationX: 0,
         pRotationY: 0,
         pRotationZ: 0,
         mRotationX: 0,
         mRotationY: 0,
-        mRotationZ: 0,
-
+        mRotationZ: 0
     }
 
     constructor(private sdk: any) {
@@ -37,7 +38,7 @@ class FloorPathComponent extends SceneComponent {
         const texture = new THREE.TextureLoader().load(`/assets/images/tags/${image}`);
         let material = new THREE.MeshBasicMaterial({
             transparent: true,
-            opacity: 0.6,
+            opacity: this.inputs.opacity,
             depthTest: false,
             depthWrite: false,
             map: texture
