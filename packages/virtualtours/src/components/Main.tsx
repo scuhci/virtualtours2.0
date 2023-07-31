@@ -16,6 +16,7 @@ import { createSignClosure, signType } from "../scene-components/SignComponent";
 import { createPathClosure, pathType } from "../scene-components/FloorPathComponent";
 import { getImage } from "../util/CustomizeTags";
 import icon2 from '../../assets/images/tags/big1.jpg';
+import { clearSound, setSound } from '../util/soundUtil';
 interface Props { }
 interface State { }
 export const ModelSid = 'eE6srFdgFSR';
@@ -116,8 +117,10 @@ export class MainView extends Component<Props, State> {
         }
         if (inRange.length > 0) {
           setMessage(inRange.toString());
+          setSound(inRange.toString());
         } else {
           clearMessage();
+          clearSound();
         }
       }
     });
@@ -180,6 +183,14 @@ export class MainView extends Component<Props, State> {
     const src = `./bundle/showcase.html?${this.queryString}&play=1&qs=1&log=0`;
     return (
       <div>
+        <audio id="Film_Classroom" loop src="https://cdn.videvo.net/videvo_files/audio/premium/audio0071/watermarked/CrowdTalking%201010_50_preview.mp3"></audio>
+        <audio id="Audio_Video_Control_Room" loop src="https://freeplay-rebuild-cms-production.s3.amazonaws.com/a/cast_a_shadow_549f193eba.mp3"></audio>
+        <button id="Film_Classroom_Button" className="hidden btn btn-primary">
+          Pause
+        </button>
+        <button id="Audio_Room_Button" className="hidden btn btn-primary">
+          Pause
+        </button>
         <div id="text" className="hidden"></div>
         <FrameView src={src}></FrameView>
       </div>

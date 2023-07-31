@@ -27,6 +27,10 @@ module.exports = {
 				test: /\.(png|jpe?g|gif)$/i,
 				loader: "url-loader",
 			},
+			{
+				test: /\.css$/i,
+				use: ["style-loader", "css-loader"],
+			},
 			{ enforce: "pre", test: /\.js$/, use: ["source-map-loader"] },
 		],
 	},

@@ -6,8 +6,14 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES6"
+    ]
   },
   "include": [
     "./src/**/**/*"
-  ]
+  ],
+ 
 }
