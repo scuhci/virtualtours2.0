@@ -4,18 +4,11 @@
     - [Prerequisites](#prerequisites)
     - [Setup monorepo root](#setup-monorepo-root)
     - [Setup packages](#setup-packages)
-    - [Run the inspector app](#run-the-inspector-app)
-    - [Run the virtual staging app](#run-the-virtual-staging-app)
-    - [Run the magical bunny app](#run-the-magical-bunny-app)
-    - [Run the remote control app](#run-the-remote-control-app)
-    - [Run the embed sdk examples](#run-the-embed-sdk-examples)
+    - [Run the virtualtours app](#run-the-virtualtours-app)
     - [Clean packages](#clean-packages)
     - [Make a prod build](#make-a-prod-build)
     - [Packages](#packages)
-      - [vs-app](#vs-app)
-      - [rc-app](#rc-app)
-      - [inspector](#inspector)
-      - [easter](#easter)
+      - [virtualtours](#virtualtours)
       - [common](#common)
       - [core](#core)
       - [bundle](#bundle)
@@ -59,36 +52,9 @@ lerna success Bootstrapped 4 packages
 ✨  Done in 20.58s.
 ```
 
-### Run the inspector app
-```shell
-> yarn inspector
-yarn run v1.22.4
-$ lerna run develop --scope=inspector --stream
-lerna notice cli v3.3.2
-lerna info filter [ 'inspector' ]
-lerna info Executing command in 1 package: "yarn run develop"
-inspector: warning package.json: "inspector" is also the name of a node core module
-inspector: $ webpack-dev-server
-inspector: ℹ ｢wds｣: Project is running at http://localhost:8000/
-inspector: ℹ ｢wds｣: webpack output is served from /
-inspector: ℹ ｢wds｣: Content not from webpack is served from /Users/bguillermo/projects/sdk_examples/packages/inspector
-```
 
-### Run the virtual staging app
-```shell
-> yarn vs-app
-yarn run v1.22.4
-$ lerna run develop --scope=vs-app --stream
-lerna notice cli v3.3.2
-lerna info filter [ 'vs-app' ]
-lerna info Executing command in 1 package: "yarn run develop"
-vs-app: $ webpack-dev-server
-vs-app: ℹ ｢wds｣: Project is running at http://localhost:8000/
-vs-app: ℹ ｢wds｣: webpack output is served from /
-vs-app: ℹ ｢wds｣: Content not from webpack is served from /Users/bguillermo/projects/sdk_examples/packages/vs-app
-```
 
-### Run the magical bunny app
+### Run the virtualtours app
 ```shell
 > yarn easter
 yarn run v1.22.4
@@ -96,41 +62,12 @@ $ lerna run develop --scope=easter --stream
 lerna notice cli v3.3.2
 lerna info filter [ 'easter' ]
 lerna info Executing command in 1 package: "yarn run develop"
-easter: $ webpack-dev-server
-easter: ℹ ｢wds｣: Project is running at http://localhost:8000/
-easter: ℹ ｢wds｣: webpack output is served from /
-easter: ℹ ｢wds｣: Content not from webpack is served from /Users/bguillermo/projects/sdk_examples/packages/easter
+virtualtours: $ webpack-dev-server
+virtualtours: ℹ ｢wds｣: Project is running at http://localhost:8000/
+virtualtours: ℹ ｢wds｣: webpack output is served from /
+virtualtours: ℹ ｢wds｣: Content not from webpack is served from /Users/bguillermo/projects/virtualtours2.0/packages/virtualtours
 ```
 
-### Run the remote control app
-```shell
-> yarn rc-app
-yarn run v1.22.4
-$ lerna run develop --scope=rc-app --stream
-lerna notice cli v3.3.2
-lerna info filter [ 'rc-app' ]
-lerna info Executing command in 1 package: "yarn run develop"
-rc-app: $ webpack-dev-server
-rc-app: ℹ ｢wds｣: Project is running at http://localhost:8000/
-rc-app: ℹ ｢wds｣: webpack output is served from /
-rc-app: ℹ ｢wds｣: Content not from webpack is served from /Users/bguillermo/projects/sdk_examples/packages/rc-app
-```
-
-### Run the embed sdk examples
-```shell
-> yarn embed-examples
-yarn run v1.22.5
-$ lerna run develop --scope=embed-examples --stream
-lerna notice cli v3.22.1
-lerna notice filter including "embed-examples"
-lerna info filter [ 'embed-examples' ]
-lerna info Executing command in 1 package: "yarn run develop"
-embed-examples: warning package.json: No license field
-embed-examples: $ webpack-dev-server
-embed-examples: ℹ ｢wds｣: Project is running at http://localhost:8000/
-embed-examples: ℹ ｢wds｣: webpack output is served from /
-embed-examples: ℹ ｢wds｣: Content not from webpack is served from /Users/bguillermo/projects/sdk_examples/packages/embed-examples/dist
-```
 
 ### Clean packages
 You will need to bootstrap after cleaning.
@@ -171,24 +108,17 @@ lerna success - vs-app
 ### Packages
 The repository is a [Lerna](https://lerna.js.org/) monorepo. This means that the package.json dependencies at the root of the repository are shared with each of the individual packages. Please keep in mind that not all root-level dependencies are used by all examples. The packages include:
 
-#### vs-app
+
+#### virtualtours
 frameworks: [Reactjs](https://reactjs.org/) + [SDK Bundle](https://matterport.github.io/showcase-sdk/sdkbundle_home.html)
-- virtual staging
-- local webcam
-- canvas
-- security camera
-
-#### rc-app
-frameworks: [Reactjs](https://reactjs.org/) + [Photon SDK](https://www.photonengine.com/sdks#sdkrealtimejavascript) + [SDK Embed](https://matterport.github.io/showcase-sdk/sdk_home.html)
-- an example that shows how to build a remote controlled showcase
-
-#### inspector
-frameworks: [Reactjs](https://reactjs.org/) + [RxJS](https://rxjs.dev/) + [SDK Bundle](https://matterport.github.io/showcase-sdk/sdkbundle_home.html)
-- object placement using sdk scene files
-
-#### easter
-frameworks: [Reactjs](https://reactjs.org/) + [Phaser](https://phaser.io/) + [SDK Bundle](https://matterport.github.io/showcase-sdk/sdkbundle_home.html)
-  - minigame
+  - Vari Hall Cyle Tour.
+  - Added features:
+      - Important locations marked in birds-eye-view.
+      - Sensors detect when user is inside an important room and shows the room's label. 
+      - Ambient noise/music when user enters certain rooms.
+      - Customized info tags. Disc switches depending on if user is on mobile device.
+      - Enabled side story and main story path icons.
+      - Enabled instructional signs guiding user on what icons mean. 
 
 #### common
 - reusable sdk bundle components
