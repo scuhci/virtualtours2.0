@@ -14,7 +14,7 @@ import hotspots from '../../assets/hotspots.json';
 import { clearMessage, setMessage } from "../util/msgUtil";
 import { createSignClosure, signType } from "../scene-components/SignComponent";
 import { createPathClosure, pathType } from "../scene-components/FloorPathComponent";
-import { getImage } from "../util/CustomizeTags";
+import { getImage } from "../util/tagsUtil";
 import icon2 from '../../assets/images/tags/big1.jpg';
 import { clearSound, setSound } from '../util/soundUtil';
 interface Props { }
