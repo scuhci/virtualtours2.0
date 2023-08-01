@@ -2,20 +2,26 @@
 import { SceneComponent } from '@mp/common';
 import { Dict } from '@mp/core';
 interface Inputs {
+    type: string,
     size: number,
     width: number,
     height: number,
     depth: number,
     color: THREE.Color,
+    radius: number,
+    tube: number,
 }
 class GeoFactory extends SceneComponent {
     private mesh: any = null;
     inputs: Inputs = {
+        type: "knot",
         size: 1.0,
         width: 1.0,
         height: 1.0,
         depth: 1.0,
         color: null,
+        radius: 1.0,
+        tube: 1.0
     }
     events = {
         "INTERACTION.CLICK": true,
@@ -27,9 +33,18 @@ class GeoFactory extends SceneComponent {
         super();
         console.log(sdk);
     }
+    getGeo(type: string) {
+        let THREE = this.context.three;
+        if (type === "knot") {
+            return new THREE.TorusKnotGeometry(this.inputs.radius, this.inputs.tube, 100, 16, 8, 3);
+        } else if (type === "box") {
+            return new THREE.BoxGeometry(this.inputs.size * this.inputs.width, this.inputs.size * this.inputs.height, this.inputs.size * this.inputs.depth);
+        }
+        return new THREE.TorusKnotGeometry(this.inputs.radius, this.inputs.tube, 100, 16, 8, 3);
+    }
     onInit() {
         let THREE = this.context.three;
-        let geometry = new THREE.BoxGeometry(this.inputs.size * this.inputs.width, this.inputs.size * this.inputs.height, this.inputs.size * this.inputs.depth);
+        let geometry = this.getGeo(this.inputs.type);
         let material = new THREE.MeshBasicMaterial({ color: this.inputs.color });
         this.mesh = new THREE.Mesh(geometry, material);
         this.outputs.objectRoot = this.mesh;

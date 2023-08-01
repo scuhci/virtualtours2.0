@@ -43,8 +43,11 @@ export class MainView extends Component<Props, State> {
     this.queryString = urlParams.toString();
   }
 
-  private addBox = async () => {
+  private addGeoObject = async () => {
     const initObj = {
+      type: "knot",
+      radius: 0.1,
+      tube: 0.01,
       size: 0.5,
       color: {}
     }
@@ -52,7 +55,7 @@ export class MainView extends Component<Props, State> {
     var [sceneObject] = await this.sdk.Scene.createObjects(1);
     const node4 = sceneObject.addNode();
     node4.addComponent(geoFactoryType, initObj)
-    node4.position.set(-32.678383074276525, 0.9582876760621081, -24.83219463891109);
+    node4.position.set(-32.678383074276525, 1.0582876760621081, -24.83219463891109);
     node4.start();
   }
   private addMattertagNode1 = (sdk: any) => {
@@ -93,7 +96,78 @@ export class MainView extends Component<Props, State> {
         });
     })
   };
+  private addSceneObject = async (sdk: any, type: string, url: string, scale: any, location: any) => {
+    const [sceneObject] = await sdk.Scene.createObjects(1);
 
+    // add a scene node for the fbx model
+    const gltfNode = sceneObject.addNode();
+
+    // adjust the position of the scene node
+    gltfNode.obj3D.position.set(location.x, location.y, location.z);
+
+    // add the gltf loader component that loads a parrot model. Adjust the model's scale to make it fit inside the model.
+    const gltfComponent = gltfNode.addComponent(type, {
+      url: url,
+      localScale: {
+        x: scale.x,
+        y: scale.y,
+        z: scale.z,
+      },
+      color: {
+        r: 1,
+        g: 0,
+        b: 0
+      }
+    });
+
+    // Add a path id 'gltfUrl' to the gltf component url property (not used in the this example).
+    sceneObject.addInputPath(gltfComponent, 'url', 'gltfUrl');
+
+    // add another scene node to contain the light objects.
+    const lightsNode = sceneObject.addNode();
+
+    // Add directional and ambient lights
+    const directionalLightComponet = lightsNode.addComponent('mp.directionalLight', {
+      color: { r: 0.7, g: 0.7, b: 0.7 },
+    });
+    lightsNode.addComponent('mp.ambientLight', {
+      intensity: 0.5,
+      color: { r: 1.0, g: 1.0, b: 1.0 },
+    });
+
+    // Add a path id 'ambientIntensity' to the intensity property of the directional light component.
+    // The path will be used to set the value later.
+    const ambientIntensityPath = sceneObject.addInputPath(directionalLightComponet, 'intensity', 'ambientIntensity');
+
+    // Start the scene object and its nodes.
+    sceneObject.start();
+    let intensity = 1;
+    const intensityMax = 3;
+    const intensityMin = 0.5;
+    const intensityDelta = 0.02;
+    let intensityDirection = 1;
+    setInterval(() => {
+      intensity += (intensityDelta * intensityDirection);
+
+      if (intensity >= intensityMax) {
+        intensity = intensityMax;
+        intensityDirection = intensityDirection * -1;
+      }
+      else if (intensity <= intensityMin) {
+        intensity = intensityMin;
+        intensityDirection = intensityDirection * -1;
+      }
+
+      // The path can be used as the public interface to the component behaviors contained within the scene object.
+      ambientIntensityPath.set(intensity);
+    }, 15);
+    const tick = function () {
+      requestAnimationFrame(tick);
+      gltfNode.obj3D.rotation.y += 0.02;
+    }
+    tick();
+
+  }
 
   async componentDidMount() {
     this.sdk = await GetSDK('sdk-iframe', this.sdkKey);
@@ -137,7 +211,17 @@ export class MainView extends Component<Props, State> {
       this.sdk.Scene.register(pathType, createPathClosure(this.sdk)),
       this.sdk.Scene.register(signType, createSignClosure(this.sdk)),
     ])
-    this.addBox();
+    this.addSceneObject(this.sdk, 'mp.gltfLoader', 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/gltf/Parrot.glb', {
+      x: 0.01,
+      y: 0.01,
+      z: 0.01,
+    }, { x: -32.678383074276525, y: 1.3582876760621081, z: -24.83219463891109 });
+    this.addSceneObject(this.sdk, 'mp.fbxLoader', 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/fbx/stanford-bunny.fbx', {
+      x: 0.00001,
+      y: 0.00001,
+      z: 0.00001,
+    }, { x: -32.678383074276525, y: 0.3582876760621081, z: -26.83219463891109 });
+    this.addGeoObject();
     const initObj = {
       size: 1.5,
       color: {},
