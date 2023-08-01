@@ -3,7 +3,7 @@ import { IDialogUser } from '../interfaces';
 import styled from '@emotion/styled';
 
 const styles = {
-  root:  {
+  root: {
     height: '800px',
     width: '100%',
     alignItems: 'stretch',
@@ -25,13 +25,13 @@ interface Props {
 };
 
 interface State {
-  user: IDialogUser|null;
+  user: IDialogUser | null;
 }
 
 export class FrameView extends Component<Props, State> {
 
 
-  constructor(props: Props){
+  constructor(props: Props) {
     super(props);
     this.state = {
       user: null,
@@ -40,14 +40,14 @@ export class FrameView extends Component<Props, State> {
 
   componentDidMount() {
   }
-  
+
   public render() {
     const { user } = this.state;
 
     return (
       <RootDiv>
         { this.state.user && user.jsx()}
-        <FrameIframe id='sdk-iframe' src={this.props.src + '&title=0&qs=1&hr=0&brand=0&help=0'}></FrameIframe>
+        <FrameIframe id='sdk-iframe' src={this.props.src + '&title=0&qs=1&hr=0&brand=0&help=1&play=0'}></FrameIframe>
       </RootDiv>
     );
   }
