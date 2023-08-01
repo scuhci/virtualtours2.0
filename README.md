@@ -113,13 +113,13 @@ The repository is a [Lerna](https://lerna.js.org/) monorepo. This means that the
 frameworks: [Reactjs](https://reactjs.org/) + [SDK Bundle](https://matterport.github.io/showcase-sdk/sdkbundle_home.html)
   - Vari Hall Cyle Tour.
   - Overall tour video capture: ![overalltour](https://github.com/scuhci/virtualtours2.0/assets/86126121/d8b549b0-3ebc-43a3-b6f5-453ba8a554bd)
-
+  - Added react router for page navigation. 
   - Added features:
       - Important locations marked in birds-eye-view.![birdseyehotspot](https://github.com/scuhci/virtualtours2.0/assets/86126121/3f5fbbec-50b2-4864-b47f-46226629415c)
         ![youarehere](https://github.com/scuhci/virtualtours2.0/assets/86126121/454fd298-df14-4d2c-8bf1-decf6ba8daee)
 
       - Sensors detect when user is inside an important room and shows the room's label. ![insideimportantroom](https://github.com/scuhci/virtualtours2.0/assets/86126121/1f53b2b9-2122-4ad4-88a8-69bfc9fadeea)
-      - Ambient noise/music when user enters certain rooms.
+      - Ambient noise/music when user enters certain rooms. If the user clicks on a video, the ambient noise will stop.
       - Customized info tags. Disc switches depending on if user is on mobile device.![mobileicon](https://github.com/scuhci/virtualtours2.0/assets/86126121/c86c11d3-b40a-456b-936f-775c49dd111b)
 
       - Enabled side story and main story path icons. ![mainstory](https://github.com/scuhci/virtualtours2.0/assets/86126121/0a4bd456-0bd6-47f4-ae1a-adb64581a800)
