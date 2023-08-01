@@ -144,6 +144,17 @@ export class MainView extends Component<Props, State> {
       name: "You are here"
     }
     initObj.color = randomColor(1, 0, 0);
+    this.sdk.on(this.sdk.Mattertag.Event.HOVER, (selectionSID: string) => {
+      this.sdk.Mattertag.getData()
+        .then((mattertTags: any) => {
+          for (let i = 0; i < mattertTags.length; i++) {
+            if (selectionSID === mattertTags[i].sid && mattertTags[i].mediaType === 'mattertag.media.video')
+              clearSound();
+          }
+        })
+        .catch(() => {
+        })
+    })
     var [sceneObject] = await this.sdk.Scene.createObjects(1);
     let currentNode = sceneObject.addNode();
     this.sdk.Sweep.current.subscribe(function (currentSweep: any) {
