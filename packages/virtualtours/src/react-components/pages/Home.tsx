@@ -43,7 +43,7 @@ class Home extends React.Component {
 						<div className="consultantsBx">
 							<div className="box">
 								<div className="iconBx">
-									<img src="../../../assets/images/cyle.jpg" width="250" height="250" />
+									<img src="../../../assets/images/landing-page/cyle.jpg" width="250" height="250" />
 								</div>
 								<div className="content">
 									<h2>Cyle</h2>
@@ -55,7 +55,7 @@ class Home extends React.Component {
 							</div>
 							<div className="box">
 								<div className="iconBx">
-									<img src="./../../assets/images/kim.jpg" width="250" height="250" />
+									<img src="./../../assets/images/landing-page/kim.jpg" width="250" height="250" />
 								</div>
 								<div className="content">
 									<h2>Kimberley</h2>
@@ -65,7 +65,7 @@ class Home extends React.Component {
 							</div>
 							<div className="box">
 								<div className="iconBx">
-									<img src="./../../assets/images/cyle.jpg" width="250" height="250" />
+									<img src="./../../assets/images/landing-page/cyle.jpg" width="250" height="250" />
 								</div>
 								<div className="content">
 									<h2>Cyle</h2>
@@ -84,9 +84,9 @@ class Home extends React.Component {
 						</div>
 						<div className="sci">
 							<ul>
-								<li><a href="#"><img src="./../../assets/images/instagram.jpg" width="250" height="250" /></a></li>
-								<li><a href="#"><img src="./../../assets/images/gmail.jpg" width="250" height="250" /></a></li>
-								<li><a href="#"><img src="./../../assets/images/facebook.jpg" width="250" height="250" /></a></li>
+								<li><a href="#"><img src="./../../assets/images/landing-page/instagram.jpg" width="250" height="250" /></a></li>
+								<li><a href="#"><img src="./../../assets/images/landing-page/gmail.jpg" width="250" height="250" /></a></li>
+								<li><a href="#"><img src="./../../assets/images/landing-page/facebook.jpg" width="250" height="250" /></a></li>
 							</ul>
 						</div>
 						<p className="copyright">Santa Clara University</p>
