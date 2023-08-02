@@ -28,7 +28,8 @@
 		"bootstrap": "lerna bootstrap && lerna link",
 		"clean": "lerna clean --yes",
 		"clean-install": "yarn clean ; yarn install ; yarn install-bundle ; yarn bootstrap",
-		"clean-build-install": "yarn clean ; yarn install ; yarn install-bundle ; yarn bootstrap ; yarn virtualtours",
+		"bootstrap:ci": "yarn --ignore-scripts --silent && lerna bootstrap -- --ignore-scripts && yarn build:ci",
+    		"build:ci": "lerna run build"
 		"build-all-dev": "lerna run build-dev",
 		"build-all-prod": "lerna run build-prod",
 		"virtualtours": "lerna run develop --scope=virtualtours --stream --no-sort",
