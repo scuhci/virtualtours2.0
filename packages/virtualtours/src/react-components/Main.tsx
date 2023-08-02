@@ -161,6 +161,30 @@ export class MainView extends Component<Props, State> {
       // The path can be used as the public interface to the component behaviors contained within the scene object.
       ambientIntensityPath.set(intensity);
     }, 15);
+    class ClickSpy {
+      node = gltfNode;
+      component = gltfComponent;
+      eventType = "INTERACTION.CLICK";
+
+      onEvent(payload: any) {
+        console.log("received node4", payload, this);
+        sdk.Sweep.moveTo("7896da97f7f84dcaa5e887adb955e045", {
+          transition: sdk.Sweep.Transition.FLY,
+          transitionTime: 2000,
+        })
+          .then(function (sweepId: any) {
+            // Move successful.
+            console.log('Arrived at sweep ' + sweepId);
+          })
+          .catch(function (error: any) {
+            // Error with moveTo command
+          });
+
+      }
+    }
+    if (url === 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/gltf/Stork.glb') {
+      gltfComponent?.spyOnEvent(new ClickSpy());
+    }
     const tick = function () {
       requestAnimationFrame(tick);
       gltfNode.obj3D.rotation.y += 0.02;
