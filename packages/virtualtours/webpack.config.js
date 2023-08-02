@@ -2,9 +2,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
-const ROOT_DIR = path.resolve(__dirname, "..");
-const SOURCE_DIR = path.resolve(ROOT_DIR, "src");
-const BUILD_DIR = path.resolve(ROOT_DIR, "dist");
 
 module.exports = {
 	mode: "development",
@@ -13,9 +10,8 @@ module.exports = {
 	},
 	entry: "./src/index.tsx",
 	output: {
-		filename: "js/[name].bundle.js",
-		path: path.join(BUILD_DIR, "assets"),
-		publicPath: "/",
+	    filename: 'js/[name].bundle.js',
+	    path: path.resolve(__dirname, "dist")
 	},
 	devtool: "source-map",
 	resolve: {
