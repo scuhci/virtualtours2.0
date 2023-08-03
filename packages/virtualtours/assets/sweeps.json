@@ -28,7 +28,7 @@
 							"color": "#FFEA00",
 							"lineColor": 0,
 							"hoverOpacity": 0.8,
-							"name": "room 1"
+							"name": "Film Classroom"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -64,7 +64,7 @@
 							"color": "#FFEA00",
 							"lineColor": 0,
 							"hoverOpacity": 0.8,
-							"name": "room 2"
+							"name": "Green screen"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -100,7 +100,7 @@
 							"color": "#FFEA00",
 							"lineColor": 0,
 							"hoverOpacity": 0.8,
-							"name": "room 3"
+							"name": "Light Control"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -172,7 +172,7 @@
 							"color": "#FFEA00",
 							"lineColor": 0,
 							"hoverOpacity": 0.8,
-							"name": "room 5"
+							"name": "Studio"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -208,7 +208,7 @@
 							"color": "#FFEA00",
 							"lineColor": 0,
 							"hoverOpacity": 0.8,
-							"name": "room 6"
+							"name": "Equipment"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -244,7 +244,7 @@
 							"color": "#FFEA00",
 							"lineColor": 0,
 							"hoverOpacity": 0.8,
-							"name": "room 7"
+							"name": "Editing Room"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -316,7 +316,7 @@
 							"color": "#FFEA00",
 							"lineColor": 0,
 							"hoverOpacity": 0.8,
-							"name": "room 9"
+							"name": "Entrance"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -460,7 +460,7 @@
 							"color": "#FFEA00",
 							"lineColor": 0,
 							"hoverOpacity": 0.8,
-							"name": "room 12"
+							"name": "Editing Room"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
