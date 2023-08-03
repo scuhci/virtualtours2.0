@@ -14,7 +14,7 @@ class App extends React.Component {
         <NavBar />
         <div className='container'>
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<MainView />} />
             <Route path='/home' element={<Home />} />
             <Route path='/tour' element={<MainView />} />
             <Route path='/login' element={<Login />} />

@@ -32,7 +32,7 @@
 							"pRotationZ": 1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
-							"name": "room 8"
+							"name": "Vari Hallway (Main story arrow)"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -71,7 +71,7 @@
 							"pRotationZ": 1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
-							"name": "room 8"
+							"name": "Vari Hallway (Main story ring)"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -110,7 +110,7 @@
 							"pRotationZ": 1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
-							"name": "room 8"
+							"name": "Vari Hallway (Main story arrow)"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -149,7 +149,7 @@
 							"pRotationZ": 1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
-							"name": "room 8"
+							"name": "Main Hallway in front of Stairs(arrow)"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -188,7 +188,7 @@
 							"pRotationZ": -1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
-							"name": "room 9"
+							"name": "Main Hallway in front of Stairs(ring)"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -227,7 +227,7 @@
 							"pRotationZ": 1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": 0,
-							"name": "room 8"
+							"name": "Main Hallway in front of Stairs(arrow)"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,

@@ -308,7 +308,7 @@ export class MainView extends Component<Props, State> {
 
 
   render() {
-    const src = `./bundle/showcase.html?${this.queryString}&play=1&qs=1&log=0`;
+    const src = `./bundle/showcase.html?${this.queryString}`;
     return (
       <div>
         <audio id="Film_Classroom" loop src="https://cdn.videvo.net/videvo_files/audio/premium/audio0071/watermarked/CrowdTalking%201010_50_preview.mp3"></audio>

@@ -312,7 +312,7 @@
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
 							"opacity": 0.6,
-							"name": "room 8"
+							"name": "Vari Hallway (Side story)"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -352,7 +352,7 @@
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
 							"opacity": 0.6,
-							"name": "room 9"
+							"name": "room nine"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -392,7 +392,7 @@
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
 							"opacity": 0.6,
-							"name": "room 9"
+							"name": "Lobby"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -432,7 +432,7 @@
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
 							"opacity": 0.6,
-							"name": "room 10"
+							"name": "Main Hallway in front of Stairs"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -553,6 +553,46 @@
 							"mRotationZ": -1.57,
 							"opacity": 0.6,
 							"name": "room 13"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "25bb32680ae34fa983f1e9d7ba2f000a",
+				"name": "",
+				"position": {
+					"x": -17.615558624267578,
+					"y": 0.5031541585922241,
+					"z": 4.0291266441345215
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Path.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": -1.57,
+							"pRotationZ": -1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": -1.57,
+							"opacity": 0.6,
+							"name": "Vari Hall Classrooms"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
