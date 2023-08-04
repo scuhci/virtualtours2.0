@@ -127,7 +127,7 @@ export class MainView extends Component<Props, State> {
     const lightsNode = sceneObject.addNode();
 
     // Add directional and ambient lights
-    const directionalLightComponet = lightsNode.addComponent('mp.directionalLight', {
+    const directionalLightComponent = lightsNode.addComponent('mp.directionalLight', {
       color: { r: 0.7, g: 0.7, b: 0.7 },
     });
     lightsNode.addComponent('mp.ambientLight', {
@@ -137,7 +137,7 @@ export class MainView extends Component<Props, State> {
 
     // Add a path id 'ambientIntensity' to the intensity property of the directional light component.
     // The path will be used to set the value later.
-    const ambientIntensityPath = sceneObject.addInputPath(directionalLightComponet, 'intensity', 'ambientIntensity');
+    const ambientIntensityPath = sceneObject.addInputPath(directionalLightComponent, 'intensity', 'ambientIntensity');
 
     // Start the scene object and its nodes.
     sceneObject.start();
@@ -196,7 +196,9 @@ export class MainView extends Component<Props, State> {
   async componentDidMount() {
     this.sdk = await GetSDK('sdk-iframe', this.sdkKey);
     console.log(this.isMobile);
+    //Add Mattertags. 
     this.addMattertagNode1(this.sdk);
+    //Sets rooms that have sensors. 
     const sensor = await this.sdk.Sensor.createSensor(this.sdk.Sensor.SensorType.CAMERA);
     sensor.showDebug(true);
     sensor.readings.subscribe({
@@ -229,12 +231,14 @@ export class MainView extends Component<Props, State> {
     const sources = await Promise.all(sourcePromises);
     sensor.addSource(...sources);
 
+    //Register the customized scene-components
     await Promise.all([
       this.sdk.Scene.register(geoFactoryType, createGeoFactoryClosure(this.sdk)),
       this.sdk.Scene.register(navPathType, createNavPathClosure(this.sdk)),
       this.sdk.Scene.register(pathType, createPathClosure(this.sdk)),
       this.sdk.Scene.register(signType, createSignClosure(this.sdk)),
     ])
+    //Create the 3D objects, add to scene. 
     this.addSceneObject(this.sdk, 'mp.gltfLoader', 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/gltf/Parrot.glb', {
       x: 0.01,
       y: 0.01,
@@ -254,13 +258,11 @@ export class MainView extends Component<Props, State> {
       y: 1.95019005476538944,
       z: 4.932051502749859,
     });
+    //Create the spinning knot at start. 
     this.addGeoObject();
-    const initObj = {
-      size: 1.5,
-      color: {},
-      name: "You are here"
-    }
-    initObj.color = randomColor(1, 0, 0);
+
+
+    //Turns off background noise when a tag with a video is loaded
     this.sdk.on(this.sdk.Mattertag.Event.HOVER, (selectionSID: string) => {
       this.sdk.Mattertag.getData()
         .then((mattertTags: any) => {
@@ -272,6 +274,14 @@ export class MainView extends Component<Props, State> {
         .catch(() => {
         })
     })
+
+    //Creates the current "You are here" sweep
+    const initObj = {
+      size: 1.5,
+      color: {},
+      name: "You are here"
+    }
+    initObj.color = randomColor(1, 0, 0);
     var [sceneObject] = await this.sdk.Scene.createObjects(1);
     let currentNode = sceneObject.addNode();
     this.sdk.Sweep.current.subscribe(function (currentSweep: any) {
@@ -286,19 +296,25 @@ export class MainView extends Component<Props, State> {
         currentNode.start();
       }
     });
+
+    //Create all sweeps 
     const sweep_nodes = await this.sdk.Scene.deserialize(JSON.stringify(sweeps));
     for (let i = 0; i < sweep_nodes.length; ++i) {
       sweep_nodes[i].start();
     }
+    //Create all signs 
     const sign_nodes = await this.sdk.Scene.deserialize(JSON.stringify(signs));
     for (let i = 0; i < sign_nodes.length; ++i) {
       sign_nodes[i].start();
     }
+
+    //Creates side story path rings
     const side_story_nodes = await this.sdk.Scene.deserialize(JSON.stringify(sidestories));
     for (let i = 0; i < side_story_nodes.length; ++i) {
       side_story_nodes[i].position.set(side_story_nodes[i].position.x, 0.0400285530090332, side_story_nodes[i].position.z);
       side_story_nodes[i].start();
     }
+    //Creates main story path rings and arrows 
     const main_story_nodes = await this.sdk.Scene.deserialize(JSON.stringify(mainstories));
     for (let i = 0; i < main_story_nodes.length; ++i) {
       main_story_nodes[i].position.set(main_story_nodes[i].position.x, 0.0400285530090332, main_story_nodes[i].position.z);
