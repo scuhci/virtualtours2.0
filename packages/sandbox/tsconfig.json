@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noUnusedLocals": false,                           /* Enable error reporting when local variables aren't read. */
+    "noUnusedParameters": false,
+    "preserveValueImports": true,
+    "noEmitOnError": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES6"
+    ]
+  },
+  "include": [
+    "./src/**/**/*"
+  ],
+ 
+}

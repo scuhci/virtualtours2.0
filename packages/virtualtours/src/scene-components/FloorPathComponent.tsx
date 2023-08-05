@@ -10,7 +10,8 @@ interface Inputs {
     pRotationZ: number,
     mRotationX: number,
     mRotationY: number,
-    mRotationZ: number
+    mRotationZ: number,
+    name: string
 }
 class FloorPathComponent extends SceneComponent {
     private mesh: any = null;
@@ -24,7 +25,8 @@ class FloorPathComponent extends SceneComponent {
         pRotationZ: 0,
         mRotationX: 0,
         mRotationY: 0,
-        mRotationZ: 0
+        mRotationZ: 0,
+        name: ""
     }
 
     constructor(private sdk: any) {
@@ -57,6 +59,16 @@ class FloorPathComponent extends SceneComponent {
     //     this.mesh.rotation.y -= 0.01;
     //     this.mesh.rotation.z -= 0.01;
     // }
+    onEvent = function (eventType: string) {
+        if (eventType === "INTERACTION.HOVER") {
+            this.notify("INTERACTION.HOVER", {
+                type: eventType,
+                node: this.context.root,
+                component: this,
+            });
+            console.log(this.inputs.name);
+        }
+    }
 }
 export const pathType = 'vt.path';
 export const createPathClosure = function (sdk: any) {

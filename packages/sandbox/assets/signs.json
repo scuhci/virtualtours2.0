@@ -1,0 +1,210 @@
+{
+  "version": "1.0",
+  "payload": {
+    "objects": [{
+      "name": "follow_main_sign",
+      "position": {
+        "x": -33.178383074276525,
+        "y": 1.8118881797790528,
+        "z":-28.83219463891109
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "components": [{
+        "type": "vt.sign",
+        "inputs": {
+          "image": "FollowMain.png",
+          "width": 1,
+          "height": 0.3,
+          "pRotationY": -3.14,
+          "pRotationZ": -3.14,
+          "mRotationX": 3.14,
+          "mRotationY": 0.52
+        },
+        "events": {
+          "INTERACTION.CLICK": true,
+          "INTERACTION.HOVER": true,
+          "INTERACTION.DRAG": false
+        }
+      }]   
+    }, {
+      "name": "past_sign",
+      "position": {
+        "x": -33.178383074276525,
+        "y": 1.3118881797790528,
+        "z":-28.83219463891109
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "components": [{
+        "type": "vt.sign",
+        "inputs": {
+          "image": "Past.png",
+          "width": 1,
+          "height": 0.3,
+          "pRotationY": -3.14,
+          "pRotationZ": -3.14,
+          "mRotationX": 3.14,
+          "mRotationY": 0.52
+        },
+        "events": {
+          "INTERACTION.CLICK": true,
+          "INTERACTION.HOVER": true,
+          "INTERACTION.DRAG": false
+        }
+      }]   
+    },{
+      "name": "howto_sign",
+      "position": {
+        "x": -33.178383074276525,
+        "y": 2.1518881797790528,
+        "z":-28.83219463891109
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "components": [{
+        "type": "vt.sign",
+        "inputs": {
+          "image": "HowToNavigate.png",
+          "width": 1,
+          "height": 0.5,
+          "pRotationY": -3.14,
+          "pRotationZ": -3.14,
+          "mRotationX": 3.14,
+          "mRotationY": 0.52
+        },
+        "events": {
+          "INTERACTION.CLICK": true,
+          "INTERACTION.HOVER": true,
+          "INTERACTION.DRAG": false
+        }
+      }]   
+    },{
+      "name": "instruction_sign",
+      "position": {
+        "x": -35.178383074276525,
+        "y": 2.0582876760621081,
+        "z":-25.83219463891109
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "components": [{
+        "type": "vt.sign",
+        "inputs": {
+          "image": "Instructions.png",
+          "width": 2,
+          "height": 1,
+          "pRotationY": -3.14,
+          "pRotationZ": -3.14,
+          "mRotationX": -3.14,
+          "mRotationY":  -3.14
+        },
+        "events": {
+          "INTERACTION.CLICK": true,
+          "INTERACTION.HOVER": true,
+          "INTERACTION.DRAG": false
+        }
+      }]   
+    }, {
+      "name": "mainstory_sign",
+      "position": {
+        "x": -22.19006022089588,
+        "y": 1.5784307565062319,
+        "z":-25.17821221536957
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "components": [{
+        "type": "vt.sign",
+        "inputs": {
+          "image": "MainStory.png",
+          "width": 2,
+          "height": 1,
+          "pRotationY": -3.14,
+          "pRotationZ": -3.14,
+          "mRotationX": -3.14,
+          "mRotationY": 1.596785
+        },
+        "events": {
+          "INTERACTION.CLICK": true,
+          "INTERACTION.HOVER": true,
+          "INTERACTION.DRAG": false
+        }
+      }]   
+    },{
+      "name": "morepath_sign",
+      "position": {
+        "x": -22.96102305361865,
+        "y": 1.21997231224456693,
+        "z":-9.258993120824082
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "components": [{
+        "type": "vt.sign",
+        "inputs": {
+          "image": "MorePath.png",
+          "width": 2,
+          "height": 1,
+          "pRotationY": -3.14,
+          "pRotationZ": -3.14,
+          "mRotationX": -3.14,
+          "mRotationY": -3.14
+        },
+        "events": {
+          "INTERACTION.CLICK": true,
+          "INTERACTION.HOVER": true,
+          "INTERACTION.DRAG": false
+        }
+      }]   
+    }]
+  }
+}

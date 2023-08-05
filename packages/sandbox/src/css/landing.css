@@ -1,0 +1,337 @@
+/* https://www.youtube.com/watch?v=12jKKvZkH4o&list=PL5e68lK9hEzcDrugJT864z742AWjJSta1&index=15&ab_channel=OnlineTutorials */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    min-height: 1000px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* ------------------- NAVBAR ------------------- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    z-index: 1000;
+    transition: 0.6s;
+}
+header.sticky {
+    padding: 5px 100px;
+    background: #ffcfcf;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+header .logo {
+    position: relative;
+    font-weight: 700;
+    color: #FFFBF5;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+header ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li {
+    position: relative;
+    list-style: none;
+}
+header ul li a {
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #FFFBF5;
+    letter-spacing: 2px;
+    font-weight: 300;
+    transition: 0.6s;
+}
+header.sticky .logo,
+header.sticky ul li a {
+    color: #000;
+}
+.toggle {
+    display: none;
+}
+
+/* ------------------- BANNER/HOMEPAGE ------------------- */
+.banner {
+    position: relative;
+    width: 100%;
+    /* min-height: 100vh; */
+    background: url("https://scu-virtual-tours.vercel.app/images/scu.jpeg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner h2 {
+    color: #FFFBF5;
+    font-size: 90px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1em;
+}
+.banner h2 span {
+    color: #950000;
+}
+.sec {
+    background: #FFFBF5;
+    /* padding: 100px; */
+    /* min-height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec .content {
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.mxw800p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+h3 {
+    font-size: 40px;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+p {
+    position: relative;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 30px;
+    background: #950000;
+    text-decoration: none;
+    color: #FFFBF5;
+    border-radius: 10px;
+}
+.btn:hover {
+    background: #ffcfcf;
+}
+
+/* ------------------- MISSION ------------------- */
+.mission {
+    background: #ffcfcf;
+    /* padding: 100px; */
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mission .content {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+/* ------------------- GUIDES ------------------- */
+.consultantsBx {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+    grid-gap: 30px;
+    /* padding-top: 40px; */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.consultantsBx .box {
+    width: 300px;
+    margin: 0 auto;
+    background: #fff;
+    /* padding: 20px; */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-radius: 25px;
+}
+.consultantsBx .box .iconBx {
+    margin-top: 0px;
+}
+.consultantsBx .box .iconBx img {
+    max-width: 250px;
+    max-height: 250px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    border: 5px solid #950000;
+    display: cover;
+}
+.consultantsBx .box h2 {
+    color: #950000;
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.consultantsBx .box p {
+    padding-top: 5px;
+    font-size: 18px;
+    margin-top: 0px;
+}
+.consultantsBx .box:hover p {
+    color: white;
+}
+.consultantsBx .box:hover {
+    background-color: #000;
+}
+.consultantsBx .box h3 {
+    color: #fff;
+    font-size: 18px;
+}
+
+/* ------------------- CONTACT US ------------------- */
+.contact {
+    background: #000;
+}
+.contact h3,
+.contact p {
+    color: #FFFBF5;
+}
+
+/* ------------------- SOCIALS ------------------- */
+.sci {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+.sci ul {
+    display: flex;
+    margin-top: 100px;
+}
+.sci ul li {
+    list-style: none;
+}
+.sci ul li a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 30px;
+}
+.sci ul li a img {
+    filter: invert(0);
+    /* max-width: 40px; */
+}
+.sci ul li a:hover img {
+    opacity: 0.5;
+}
+.copyright a {
+    color: #FFFBF5;
+}
+
+/* ------------------- SCREEN FLEXIBILITY ------------------- */
+@media (max-width: 1000px) {
+    .toggle {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .toggle:before {
+        content: '';
+        position: absolute;
+        top: 4px;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        z-index: 1;
+        box-shadow: 0 10px 0 #000;
+        transition: 0.25s;
+    }
+    .toggle:after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        z-index: 1;
+        transition: 0.25s;
+    }
+    header,
+    header.sticky {
+        padding: 5px 50px;
+        background-color: #FFFBF5;
+    }
+    header ul {
+        position: absolute;
+        top: 47px;
+        left: 0;
+        width: 100%;
+        /* height: 100vh; */
+        text-align: center;
+        overflow: auto;
+        background: #FFFBF5;
+        visibility: hidden;
+        opacity: 0;
+    }
+    header.active ul {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        /* padding-top: 20px; */
+    }
+    header.active ul li a {
+        display: inline-block;
+        margin: 10px 0;
+        font-size: 20px;
+    }
+    header .logo,
+    header ul li a {
+        color: #000;
+    }
+    .banner {
+        background-position: center;
+        width: 100%;
+    }
+    .banner h2 {
+        font-size: 50px;
+        padding: 0 0px;
+    }
+    .sec {
+        padding: 100px 50px 50px 50px;
+    }
+    .consultants .box {
+        width: 100%;
+        margin: 0 0px;
+    }
+    .consultantsBx {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        display: flex;
+        flex-direction: column;
+    }
+    .sci {
+        margin: 20px;
+    }
+    .sci ul li a img {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 36px;
+    }
+}
