@@ -21,7 +21,7 @@ header.sticky {
 header .logo {
     position: relative;
     font-weight: 700;
-    /* color: #FFFBF5; */
+    color: black;
     font-size: 1.5em;
     text-transform: uppercase;
     text-decoration: none;
@@ -41,7 +41,7 @@ header ul li a {
     position: relative;
     margin: 0 15px;
     text-decoration: none;
-    /* color: #FFFBF5; */
+    color: black;
     letter-spacing: 2px;
     font-weight: 300;
     transition: 0.6s;
