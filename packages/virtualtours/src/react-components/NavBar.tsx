@@ -9,6 +9,9 @@ class NavBar extends React.Component {
 			const scrollDiv = element.offsetTop;
 			window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
 		}
+		//Doesn't seem like the active css is applied. 
+		// var header = document.querySelector("header");
+		// header.classList.toggle("active");
 	}
 	render() {
 		return (
@@ -18,28 +21,28 @@ class NavBar extends React.Component {
 					<ul>
 						<li>
 							<Link to='/' onClick={() => this.scrollTo("home")}>
-								Home
-						</Link>
+								<div className="nav-links">Home</div>
+							</Link>
 						</li>
 						<li>
 							<Link to='/#consultants' onClick={() => this.scrollTo("consultants")}>
-								Tour Guides
-						</Link>
+								<div className="nav-links">Tour Guides</div>
+							</Link>
 						</li>
 						<li>
 							<Link to='/#contact' onClick={() => this.scrollTo("contact")}>
-								Contact
-						</Link>
+								<div className="nav-links">Contact</div>
+							</Link>
 						</li>
 						<li>
 							<Link to='/register'>
-								Register
-						</Link>
+								<div className="nav-links">Register</div>
+							</Link>
 						</li>
 						<li>
 							<Link to='/login'>
-								Login
-						</Link>
+								<div className="nav-links">Login</div>
+							</Link>
 						</li>
 					</ul>
 				</header>

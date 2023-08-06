@@ -47,7 +47,7 @@ export class FrameView extends Component<Props, State> {
     return (
       <RootDiv>
         { this.state.user && user.jsx()}
-        <FrameIframe id='sdk-iframe' src={this.props.src + '&title=0&qs=1&hr=0&brand=0&help=0&play=1'}></FrameIframe>
+        <FrameIframe id='sdk-iframe' src={this.props.src + '&title=0&qs=1&hr=0&brand=0&help=0&play=0'}></FrameIframe>
       </RootDiv>
     );
   }
