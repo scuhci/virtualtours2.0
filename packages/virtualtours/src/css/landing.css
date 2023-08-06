@@ -1,18 +1,5 @@
 /* https://www.youtube.com/watch?v=12jKKvZkH4o&list=PL5e68lK9hEzcDrugJT864z742AWjJSta1&index=15&ab_channel=OnlineTutorials */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-body {
-    min-height: 1000px;
-}
-html {
-    scroll-behavior: smooth;
-}
-
 /* ------------------- NAVBAR ------------------- */
 header {
     position: fixed;
@@ -34,7 +21,7 @@ header.sticky {
 header .logo {
     position: relative;
     font-weight: 700;
-    color: #FFFBF5;
+    /* color: #FFFBF5; */
     font-size: 1.5em;
     text-transform: uppercase;
     text-decoration: none;
@@ -54,7 +41,7 @@ header ul li a {
     position: relative;
     margin: 0 15px;
     text-decoration: none;
-    color: #FFFBF5;
+    /* color: #FFFBF5; */
     letter-spacing: 2px;
     font-weight: 300;
     transition: 0.6s;
@@ -71,7 +58,7 @@ header.sticky ul li a {
 .banner {
     position: relative;
     width: 100%;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     background: url("https://scu-virtual-tours.vercel.app/images/scu.jpeg");
     background-size: cover;
     display: flex;
@@ -90,8 +77,8 @@ header.sticky ul li a {
 }
 .sec {
     background: #FFFBF5;
-    /* padding: 100px; */
-    /* min-height: 100vh; */
+    padding: 100px;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,15 +122,17 @@ p {
 /* ------------------- MISSION ------------------- */
 .mission {
     background: #ffcfcf;
-    /* padding: 100px; */
+    padding: 100px;
     min-height: 10vh;
     display: flex;
+    color:black;
     justify-content: center;
     align-items: center;
 }
 .mission .content {
     position: relative;
     text-align: center;
+    color:black;
     width: 100%;
 }
 
@@ -154,7 +143,7 @@ p {
     justify-content: space-around;
     max-width: 100%;
     grid-gap: 30px;
-    /* padding-top: 40px; */
+    padding-top: 40px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -162,7 +151,7 @@ p {
     width: 300px;
     margin: 0 auto;
     background: #fff;
-    /* padding: 20px; */
+    padding: 20px;
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     border-radius: 25px;
 }
@@ -231,7 +220,7 @@ p {
 }
 .sci ul li a img {
     filter: invert(0);
-    /* max-width: 40px; */
+    max-width: 40px;
 }
 .sci ul li a:hover img {
     opacity: 0.5;
@@ -280,7 +269,7 @@ p {
         top: 47px;
         left: 0;
         width: 100%;
-        /* height: 100vh; */
+        height: 100vh;
         text-align: center;
         overflow: auto;
         background: #FFFBF5;
@@ -291,7 +280,7 @@ p {
         visibility: visible;
         opacity: 1;
         display: block;
-        /* padding-top: 20px; */
+        padding-top: 20px;
     }
     header.active ul li a {
         display: inline-block;

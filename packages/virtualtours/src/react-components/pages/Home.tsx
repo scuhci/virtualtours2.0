@@ -5,6 +5,14 @@ class Home extends React.Component {
 
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll);
+		let id = window.location.href.split('/')[3];
+		if (id) id = id.substring(1);
+		const element = document.getElementById(id);
+		if (element) {
+			const scrollDiv = element.offsetTop;
+			window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+		}
+
 	}
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.handleScroll);
@@ -84,9 +92,9 @@ class Home extends React.Component {
 						</div>
 						<div className="sci">
 							<ul>
-								<li><a href="#"><img src="./../../assets/images/landing-page/instagram.jpg" width="250" height="250" /></a></li>
-								<li><a href="#"><img src="./../../assets/images/landing-page/gmail.jpg" width="250" height="250" /></a></li>
-								<li><a href="#"><img src="./../../assets/images/landing-page/facebook.jpg" width="250" height="250" /></a></li>
+								<li><a href="#"><img src="./../../assets/images/landing-page/instagram.jpg" /></a></li>
+								<li><a href="#"><img src="./../../assets/images/landing-page/gmail.jpg" /></a></li>
+								<li><a href="#"><img src="./../../assets/images/landing-page/facebook.jpg" /></a></li>
 							</ul>
 						</div>
 						<p className="copyright">Santa Clara University</p>
