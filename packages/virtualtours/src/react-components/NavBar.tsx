@@ -3,47 +3,47 @@ import { Link } from "react-router-dom";
 
 
 class NavBar extends React.Component {
+	private scrollTo = (id: string) => {
+		const element = document.getElementById(id);
+		if (element) {
+			const scrollDiv = element.offsetTop;
+			window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
+		}
+	}
 	render() {
 		return (
-			<nav className='navbar navbar-expand-lg navbar-light bg-light'>
-				<div className='container'>
-					<Link className='navbar-brand' to='/'>
-						Home
-					</Link>
-					<button
-						className='navbar-toggler'
-						type='button'
-						data-bs-toggle='collapse'
-						data-bs-target='#navbarText'
-						aria-controls='navbarText'
-						aria-expanded='false'
-						aria-label='Toggle navigation'
-					>
-						<span className='navbar-toggler-icon'></span>
-					</button>
-					<div className='collapse navbar-collapse' id='navbarText'>
-						<ul className='navbar-nav me-auto mb-2 mb-lg-0'>
-							<li className='nav-item'>
-								<Link className='navbar-brand' to='/tour'>
-									Tour
-								</Link>
-							</li>
-						</ul>
-						<ul className='navbar-nav'>
-							<li className='nav-item'>
-								<Link className='navbar-brand' to='/login'>
-									Login
-								</Link>
-							</li>
-							<li className='nav-item'>
-								<Link className='navbar-brand' to='/register'>
-									Register
-								</Link>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
+			<>
+				<header id="header">
+					<a href="#" className="logo">SCU Virtual Tours</a>
+					<ul>
+						<li>
+							<Link to='/' onClick={() => this.scrollTo("home")}>
+								Home
+						</Link>
+						</li>
+						<li>
+							<Link to='/#consultants' onClick={() => this.scrollTo("consultants")}>
+								Tour Guides
+						</Link>
+						</li>
+						<li>
+							<Link to='/#contact' onClick={() => this.scrollTo("contact")}>
+								Contact
+						</Link>
+						</li>
+						<li>
+							<Link to='/register'>
+								Register
+						</Link>
+						</li>
+						<li>
+							<Link to='/login'>
+								Login
+						</Link>
+						</li>
+					</ul>
+				</header>
+			</>
 		);
 	}
 }

@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    min-height: 1000px;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+  #root {
+    font-family: Poppins, Verdana, sans-serif;
+    --border-width: 2px;
+    --border-radius: 0.3rem;
+    background-color: rgb(0, 6, 13);
+  }
+  
+  [data-theme=light],
+  :root:not([data-theme=dark]) {
+    color-scheme: light;
+    --background-color: rgb(0, 6, 13);
+    --color: rgb(255, 255, 255);
+    --muted-color: rgb(63, 75, 89);
+    --h1-color: rgb(255, 255, 255);
+    --h2-color: var(--primary);
+    --h3-color: var(--primary);
+    --primary: rgb(81, 133, 180);
+    --primary-hover: rgb(67, 115, 157);
+    --primary-focus: rgba(61, 105, 143, 0.25);
+    --primary-inverse: #fff;
+    --secondary: var(--muted-color);
+    --secondary-hover: rgb(51, 61, 72);
+    --form-element-background-color: white;
+    --form-element-border-color: white;
+    --form-element-color: black;
+    --form-element-placeholder-color: var(--muted-color);
+    --form-element-active-background-color: var(--form-element-background-color);
+    --form-element-active-border-color: var(--primary);
+    --form-element-focus-color: var(--primary-focus);
+    --typography-spacing-vertical: 0;
+  }
+/* [data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --primary: #d81b60;
+  --primary-hover: #c2185b;
+  --primary-focus: rgba(216, 27, 96, 0.125);
+  --primary-inverse: #FFF;
+} */
+  .container-fluid {
+    width: 100%;
+    margin-top: 100px;
+    background-color: #222222;
+  }
