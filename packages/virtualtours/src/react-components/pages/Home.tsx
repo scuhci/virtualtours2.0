@@ -31,7 +31,7 @@ class Home extends React.Component {
 				<section className="banner" id="home">
 					<div>
 						<h2><span>Santa Clara University</span></h2>
-						<h2>Virtual Campus Tours</h2>
+						<h2>Virtual Campus Tours VCT</h2>
 					</div>
 				</section>
 				<section className="mission" id="mission">
