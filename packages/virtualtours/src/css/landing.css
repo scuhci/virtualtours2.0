@@ -12,21 +12,20 @@ header {
     /* padding: 40px 100px; */
     z-index: 1000;
     transition: 0.6s;
+    background: #ffcfcf;
 }
 header.sticky {
-    padding: 5px 100px;
-    background: #ffcfcf;
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
 header .logo {
     position: relative;
     font-weight: 700;
-    color: black;
+    color: #950000;
     font-size: 1.5em;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 2px;
-    padding: 0rem 0rem 1rem 0rem;
+    padding: 0rem 0rem 1rem 2.2rem;
 }
 header ul {
     position: relative;
@@ -47,9 +46,11 @@ header ul li a {
     font-weight: 300;
     transition: 0.6s;
 }
-header.sticky .logo,
+header.sticky .logo {
+    color: #950000;
+}
 header.sticky ul li a {
-    color: #000;
+    color: black;
 }
 .toggle {
     display: none;
