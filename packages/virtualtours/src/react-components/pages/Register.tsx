@@ -2,21 +2,22 @@ import React, { useState } from "react";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../util/firebaseUtil';
 import FormInput from '../form-input';
 import Button from '../button';
-const defaultUser = {
+const defaultInputFields = {
 	displayName: "",
 	email: "",
 	password: "",
-	confirmPassword: ""
+	confirmPassword: "",
+	role: "default",
 }
 const Register = () => {
-	const [user, setUser] = useState(defaultUser);
-	const { displayName, email, password, confirmPassword } = user;
+	const [inputFields, setInputFields] = useState(defaultInputFields);
+	const { displayName, email, password, confirmPassword } = inputFields;
 	const resetFormFields = () => {
-		setUser(defaultUser)
+		setInputFields(defaultInputFields)
 	}
 	const handleInputChange = (event: any) => {
 		const { name, value } = event.target;
-		setUser((prev) => {
+		setInputFields((prev) => {
 			return {
 				...prev,
 				[name]: value,
@@ -32,7 +33,7 @@ const Register = () => {
 		}
 		try {
 			const { user } = await createAuthUserWithEmailAndPassword(email, password);
-			await createUserDocumentFromAuth(user, { displayName });
+			await createUserDocumentFromAuth(user, { displayName, role: inputFields.role });
 			resetFormFields();
 		} catch (error) {
 			if (error.code === 'auth/email-already-in-use') {
@@ -47,6 +48,16 @@ const Register = () => {
 			<h2>Don't have an account?</h2>
 			<span>Sign up with your email and password</span>
 			<form>
+				<div className="group">
+					<select name="role" value={inputFields.role} onChange={handleInputChange} defaultValue="default" className="form-select">
+						<option value="default" disabled>
+							Select your role
+        				</option>
+						<option value="Parent">Parent</option>
+						<option value="Student">Student</option>
+						<option value="Educator">Educator</option>
+					</select>
+				</div>
 				<FormInput label='Display Name' inputOptions={{ type: 'text', name: 'displayName', value: displayName, onChange: handleInputChange, required: true }} />
 				<FormInput label='Email' inputOptions={{ type: 'text', name: 'email', value: email, onChange: handleInputChange, required: true }} />
 				<FormInput label='Password' inputOptions={{ type: 'password', name: 'password', value: password, onChange: handleInputChange, required: true }} />
