@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Authentication from "./pages/Authentication";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/Register";
 import { MainView } from "./Main";
@@ -9,7 +9,7 @@ import NavBar from "./NavBar";
 import "../css/app.scss";
 import "../css/landing.scss";
 import "../css/tour.scss";
-import "../css/login.scss";
+import "../css/auth.scss";
 import "../css/buttonstyles.scss";
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
     { path: "/", element: <Home /> },
     { path: "/:id", element: <Home /> },
     { path: "/tour", element: <MainView /> },
-    { path: "/login", element: <Login /> },
+    { path: "/login", element: <Authentication /> },
     { path: "/register", element: <Register /> },
     { path: "/404", element: <NotFound /> },
   ])
