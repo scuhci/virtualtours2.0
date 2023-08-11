@@ -6,9 +6,11 @@ import Register from "./pages/Register";
 import { MainView } from "./Main";
 import { useRoutes } from "react-router-dom";
 import NavBar from "./NavBar";
-import "../css/app.css";
-import "../css/landing.css";
-import "../css/tour.css";
+import "../css/app.scss";
+import "../css/landing.scss";
+import "../css/tour.scss";
+import "../css/login.scss";
+import "../css/buttonstyles.scss";
 
 const App = () => {
   useEffect(() => {

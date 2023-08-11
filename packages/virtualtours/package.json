@@ -23,7 +23,10 @@
 		"react-dropzone": "^10.2.0",
 		"react-router-dom": "^6.14.0",
 		"rxjs": "^6.5.3",
-		"url-loader": "^4.1.1"
+		"sass": "^1.65.1",
+		"sass-loader": "^13.3.2",
+		"url-loader": "^4.1.1",
+		"webpack": "^5.88.2"
 	},
 	"devDependencies": {
 		"@types/react-router-dom": "^5.3.3",
