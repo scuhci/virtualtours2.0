@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../util/firebaseUtil';
 import FormInput from '../form-input';
 import Button from '../button';
+import { UserContext } from '../../contexts/UserContext';
 const defaultInputFields = {
 	displayName: "",
 	email: "",
@@ -15,6 +16,7 @@ const Register = () => {
 	const resetFormFields = () => {
 		setInputFields(defaultInputFields)
 	}
+	const { setCurrentUser } = useContext(UserContext);
 	const handleInputChange = (event: any) => {
 		const { name, value } = event.target;
 		setInputFields((prev) => {
@@ -33,6 +35,7 @@ const Register = () => {
 		}
 		try {
 			const { user } = await createAuthUserWithEmailAndPassword(email, password);
+			setCurrentUser(user);
 			await createUserDocumentFromAuth(user, { displayName, role: inputFields.role });
 			resetFormFields();
 		} catch (error) {

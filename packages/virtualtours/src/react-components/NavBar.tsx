@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
-
-class NavBar extends React.Component {
-	private scrollTo = (id: string) => {
+import { UserContext } from '../contexts/UserContext';
+import { signOutUser } from '../util/firebaseUtil';
+const NavBar = () => {
+	const scrollTo = (id: string) => {
 		const element = document.getElementById(id);
 		if (element) {
 			const scrollDiv = element.offsetTop;
@@ -13,42 +13,46 @@ class NavBar extends React.Component {
 		// var header = document.querySelector("header");
 		// header.classList.toggle("active");
 	}
-	render() {
-		return (
-			<>
-				<header id="header">
-					<a href="#" className="logo">SCU Virtual Tours</a>
-					<ul>
-						<li>
-							<Link to='/' onClick={() => this.scrollTo("home")}>
-								<div className="nav-links">Home</div>
-							</Link>
-						</li>
-						<li>
-							<Link to='/#consultants' onClick={() => this.scrollTo("consultants")}>
-								<div className="nav-links">Tour Guides</div>
-							</Link>
-						</li>
-						<li>
-							<Link to='/#contact' onClick={() => this.scrollTo("contact")}>
-								<div className="nav-links">Contact</div>
-							</Link>
-						</li>
-						<li>
-							<Link to='/register'>
-								<div className="nav-links">Register</div>
-							</Link>
-						</li>
-						<li>
-							<Link to='/login'>
-								<div className="nav-links">Login</div>
-							</Link>
-						</li>
-					</ul>
-				</header>
-			</>
-		);
+	const { currentUser, setCurrentUser } = useContext(UserContext);
+	console.log(currentUser);
+	const signOutHandler = async () => {
+		await signOutUser();
+		setCurrentUser(null);
 	}
+	return (
+		<>
+			<header id="header">
+				<a href="#" className="logo">SCU Virtual Tours</a>
+				<ul>
+					<li>
+						<Link to='/' onClick={() => scrollTo("home")}>
+							<div className="nav-links">Home</div>
+						</Link>
+					</li>
+					<li>
+						<Link to='/#consultants' onClick={() => scrollTo("consultants")}>
+							<div className="nav-links">Tour Guides</div>
+						</Link>
+					</li>
+					<li>
+						<Link to='/#contact' onClick={() => scrollTo("contact")}>
+							<div className="nav-links">Contact</div>
+						</Link>
+					</li>
+					<li>
+						{
+							currentUser ? (
+								<div className='nav-links' onClick={signOutHandler}>Sign Out</div>) : (
+									<Link className='nav-links' to='/login'>
+										Sign In
+									</Link>
+								)
+						}
+					</li>
+				</ul>
+			</header>
+		</>
+	);
 }
 
 export default NavBar;

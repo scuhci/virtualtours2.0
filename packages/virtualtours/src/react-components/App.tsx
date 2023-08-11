@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Home from "./pages/Home";
 import Authentication from "./pages/Authentication";
 import NotFound from "./pages/NotFound";
-import Register from "./pages/Register";
 import { MainView } from "./Main";
 import { useRoutes } from "react-router-dom";
 import NavBar from "./NavBar";
@@ -24,7 +23,6 @@ const App = () => {
     { path: "/:id", element: <Home /> },
     { path: "/tour", element: <MainView /> },
     { path: "/login", element: <Authentication /> },
-    { path: "/register", element: <Register /> },
     { path: "/404", element: <NotFound /> },
   ])
   return (
