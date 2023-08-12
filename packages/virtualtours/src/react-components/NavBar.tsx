@@ -14,7 +14,6 @@ const NavBar = () => {
 		// header.classList.toggle("active");
 	}
 	const { currentUser } = useContext(UserContext);
-	console.log(currentUser);
 	return (
 		<>
 			<header id="header">

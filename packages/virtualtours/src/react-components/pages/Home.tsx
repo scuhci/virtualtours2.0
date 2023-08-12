@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../contexts/UserContext"
 
-class Home extends React.Component {
-
-	componentDidMount() {
-		window.addEventListener('scroll', this.handleScroll);
+const Home = () => {
+	const { currentUser } = useContext(UserContext);
+	useEffect(() => {
 		let id = window.location.href.split('/')[3];
 		if (id) id = id.substring(1);
 		const element = document.getElementById(id);
@@ -13,20 +13,10 @@ class Home extends React.Component {
 			window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
 		}
 
-	}
-	componentWillUnmount() {
-		window.removeEventListener('scroll', this.handleScroll);
-	}
-	handleScroll(event: any) {
-		let scrollTop = event.srcElement.body.scrollTop,
-			itemTranslate = Math.min(0, scrollTop / 3 - 60);
+	}, [])
 
-		this.setState({
-			transform: itemTranslate
-		});
-	}
-	render() {
-		return (
+	return (
+		<>
 			<div>
 				<section className="banner" id="home">
 					<div>
@@ -56,9 +46,12 @@ class Home extends React.Component {
 								<div className="content">
 									<h2>Cyle</h2>
 									<p>A little info describing tour.</p>
-									<Link className='btn' to='/tour'>
+									{currentUser && <Link className='btn' to='/tour'>
 										See Tour
-									</Link>
+									</Link>}
+									{!currentUser && <Link className='btn' to='/login'>
+										Sign in to see the tours
+									</Link>}
 								</div>
 							</div>
 							<div className="box">
@@ -101,8 +94,8 @@ class Home extends React.Component {
 					</div>
 				</section>
 			</div>
-		);
-	}
+		</>
+	);
 }
 
 export default Home;
