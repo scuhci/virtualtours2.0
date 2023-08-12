@@ -13,12 +13,8 @@ const NavBar = () => {
 		// var header = document.querySelector("header");
 		// header.classList.toggle("active");
 	}
-	const { currentUser, setCurrentUser } = useContext(UserContext);
+	const { currentUser } = useContext(UserContext);
 	console.log(currentUser);
-	const signOutHandler = async () => {
-		await signOutUser();
-		setCurrentUser(null);
-	}
 	return (
 		<>
 			<header id="header">
@@ -42,7 +38,7 @@ const NavBar = () => {
 					<li>
 						{
 							currentUser ? (
-								<div className='nav-links' onClick={signOutHandler}>Sign Out</div>) : (
+								<div className='nav-links' onClick={signOutUser}>Sign Out</div>) : (
 									<Link className='nav-links' to='/login'>
 										Sign In
 									</Link>
