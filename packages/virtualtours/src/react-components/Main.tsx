@@ -19,7 +19,7 @@ import icon2 from '../../assets/images/tags/big1.jpg';
 import { clearSound, setSound } from '../util/soundUtil';
 interface Props { }
 interface State { }
-export const ModelSid = 'eE6srFdgFSR';
+export const ModelSid = 'eE6srFdgFSR'; // Venus: This is Cyle's tour.
 
 
 export class MainView extends Component<Props, State> {
