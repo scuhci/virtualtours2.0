@@ -5,21 +5,14 @@ import React from "react";
 import { createGeoFactoryClosure, geoFactoryType } from '../scene-components/GeoFactory';
 import { createNavPathClosure, navPathType } from '../scene-components/NavPathComponents';
 import { randomColor } from '../util/colorUtil';
-import sweeps from '../../assets/sweeps.json';
-import signs from '../../assets/signs.json';
-import sourceDescs from '../../assets/sources.json';
-import sidestories from '../../assets/sidestories.json';
-import mainstories from '../../assets/mainstories.json';
-import hotspots from '../../assets/hotspots.json';
 import { clearMessage, setMessage } from "../util/msgUtil";
 import { createSignClosure, signType } from "../scene-components/SignComponent";
 import { createPathClosure, pathType } from "../scene-components/FloorPathComponent";
-import { getImage } from "../util/tagsUtil";
 import icon2 from '../../assets/images/tags/big1.jpg';
 import { clearSound, setSound } from '../util/soundUtil';
+import { getModelSid, getHotspots, getMainStories, getSideStories, getSigns, getSources, getSweeps, getImage } from '../util/assetUtil';
 interface Props { }
 interface State { }
-export const ModelSid = 'eE6srFdgFSR'; // Venus: This is Cyle's tour.
 
 
 export class MainView extends Component<Props, State> {
@@ -27,13 +20,18 @@ export class MainView extends Component<Props, State> {
   private queryString: string = "";
   private sdkKey: string = sdkKey;
   private isMobile: boolean = false;
-
+  private spaceId: string = "";
   constructor(props: Props) {
     super(props);
     this.isMobile = window.matchMedia("(min-width: 768px)").matches;
     const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('id')) {
+      this.spaceId = urlParams.get('id');
+    } else {
+      this.spaceId = 'vari';
+    }
     if (!urlParams.has('m')) {
-      urlParams.set('m', ModelSid);
+      urlParams.set('m', getModelSid(this.spaceId));
     }
     if (urlParams.has('applicationKey')) {
       this.sdkKey = urlParams.get('applicationKey');
@@ -60,8 +58,10 @@ export class MainView extends Component<Props, State> {
   }
   private addMattertagNode1 = (sdk: any) => {
     let matterTags: any = [];
+    const hotspots = getHotspots(this.spaceId);
     hotspots.map((e) => {
       matterTags.push({
+        tourId: e.tourId,
         label: e.title,
         description: e.description,
         anchorPosition: {
@@ -87,7 +87,7 @@ export class MainView extends Component<Props, State> {
       sdk.Mattertag.getData()
         .then(function (mattertags: any) {
           for (let i = 0; i < matterTags.length; i++) {
-            window.matchMedia("(min-width: 768px)").matches ? sdk.Asset.registerTexture(`${mattertags[i].sid}1`, getImage(mattertags[i].label)) : sdk.Mattertag.registerIcon(`${mattertags[i].sid}1`, icon2);
+            window.matchMedia("(min-width: 768px)").matches ? sdk.Asset.registerTexture(`${mattertags[i].sid}1`, getImage(matterTags[i].tourId, mattertags[i].label)) : sdk.Mattertag.registerIcon(`${mattertags[i].sid}1`, icon2);
             sdk.Mattertag.editIcon(mattertags[i].sid, `${mattertags[i].sid}1`);
           }
 
@@ -225,6 +225,7 @@ export class MainView extends Component<Props, State> {
       }
     });
     const sourcePromises = [];
+    const sourceDescs = getSources(this.spaceId);
     for (const desc of sourceDescs) {
       sourcePromises.push(this.sdk.Sensor.createSource(desc.type, desc.options));
     }
@@ -298,23 +299,27 @@ export class MainView extends Component<Props, State> {
     });
 
     //Create all sweeps 
+    const sweeps = getSweeps(this.spaceId);
     const sweep_nodes = await this.sdk.Scene.deserialize(JSON.stringify(sweeps));
     for (let i = 0; i < sweep_nodes.length; ++i) {
       sweep_nodes[i].start();
     }
     //Create all signs 
+    const signs = getSigns(this.spaceId);
     const sign_nodes = await this.sdk.Scene.deserialize(JSON.stringify(signs));
     for (let i = 0; i < sign_nodes.length; ++i) {
       sign_nodes[i].start();
     }
 
     //Creates side story path rings
+    const sidestories = getSideStories(this.spaceId);
     const side_story_nodes = await this.sdk.Scene.deserialize(JSON.stringify(sidestories));
     for (let i = 0; i < side_story_nodes.length; ++i) {
       side_story_nodes[i].position.set(side_story_nodes[i].position.x, 0.0400285530090332, side_story_nodes[i].position.z);
       side_story_nodes[i].start();
     }
     //Creates main story path rings and arrows 
+    const mainstories = getMainStories(this.spaceId);
     const main_story_nodes = await this.sdk.Scene.deserialize(JSON.stringify(mainstories));
     for (let i = 0; i < main_story_nodes.length; ++i) {
       main_story_nodes[i].position.set(main_story_nodes[i].position.x, 0.0400285530090332, main_story_nodes[i].position.z);

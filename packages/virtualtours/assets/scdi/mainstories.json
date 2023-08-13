@@ -1,0 +1,125 @@
+{
+	"version": "1.0",
+	"__comment1__": "For the main story, add arrow, ring, then arrow objects. Arrow's direction needs to be rotated (mRotationZ adjust) based on location",
+	"payload": {
+		"objects": [
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow1",
+				"position": {
+					"x": 3.481987468734383583,
+					"y": -0.5051421566009521,
+					"z": 1.2123927652835846
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": 0,
+							"name": "Vari Hallway (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "ring",
+				"position": {
+					"x": 4.481987468734383583,
+					"y": -0.5051421566009521,
+					"z": 1.2123927652835846
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "TourAssets.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": -1.57,
+							"name": "Vari Hallway (Main story ring)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow2",
+				"position": {
+					"x": 5.481987468734383583,
+					"y": -0.5051421566009521,
+					"z": 1.2123927652835846
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": 0,
+							"name": "Vari Hallway (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			}
+		]
+	}
+}

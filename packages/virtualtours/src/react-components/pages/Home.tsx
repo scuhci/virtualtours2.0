@@ -46,7 +46,7 @@ const Home = () => {
 								<div className="content">
 									<h2>Cyle</h2>
 									<p>A little info describing tour.</p>
-									{currentUser && <Link className='btn' to='/tour'>
+									{currentUser && <Link className='btn' to='/tour?id=vari'>
 										See Tour
 									</Link>}
 									{!currentUser && <Link className='btn' to='/login'>
@@ -61,7 +61,12 @@ const Home = () => {
 								<div className="content">
 									<h2>Kimberley</h2>
 									<p>A little info describing tour.</p>
-									<a href="https://my.treedis.com/tour/scdi-tour" target="_blank" rel="noopener noreferrer" className="btn">See Tour</a>
+									{currentUser && <Link className='btn' to='/tour?id=scdi'>
+										See Tour
+									</Link>}
+									{!currentUser && <Link className='btn' to='/login'>
+										Sign in to see the tours
+									</Link>}
 								</div>
 							</div>
 							<div className="box">
