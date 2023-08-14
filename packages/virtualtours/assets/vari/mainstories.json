@@ -617,7 +617,46 @@
 							"pRotationZ": 1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": 0,
-							"name": "Vari Hallway (Main story arrow)"
+							"name": "Film Classroom (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow1",
+				"position": {
+					"x": -8.499,
+					"y": 0.843,
+					"z": 1.284
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": 0.785,
+							"mRotationZ": 0,
+							"name": "Film Classroom (Main story arrow elevated)"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -631,9 +670,9 @@
 				"id": "d0dd3b63684443db96797fe84ee94441",
 				"name": "ring",
 				"position": {
-					"x": -5.39,
-					"y": -0.011,
-					"z": -2.601
+					"x": -5.50843620300293,
+					"y": 9.4484200477600098,
+					"z": -2.59869122505188
 				},
 				"rotation": {
 					"x": 0,
@@ -656,7 +695,7 @@
 							"pRotationZ": 1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
-							"name": "Vari Hallway (Main story ring)"
+							"name": "Film Classroom (Main story ring)"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
@@ -670,9 +709,9 @@
 				"id": "d0dd3b63684443db96797fe84ee94441",
 				"name": "arrow2",
 				"position": {
-					"x": -23.05,
-					"y": 0.1500285530090332,
-					"z": -21.81281280517578
+					"x": -6.2,
+					"y": -0.0133,
+					"z": -1.96
 				},
 				"rotation": {
 					"x": 0,
@@ -692,10 +731,361 @@
 							"width": 0.5,
 							"height": 0.5,
 							"pRotationY": 0,
+							"pRotationZ": 0.785,
+							"mRotationX": -1.57,
+							"mRotationZ": -2.094,
+							"name": "Film Classroom (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow1",
+				"position": {
+					"x": -7.18,
+					"y": -0.0096,
+					"z": -1.445
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 0.785,
+							"mRotationX": -1.57,
+							"mRotationZ": -1.57,
+							"name": "Film Classroom (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow1",
+				"position": {
+					"x": -7.134,
+					"y": -0.002,
+					"z": 1.182
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 0.785,
+							"mRotationX": -1.57,
+							"mRotationZ": -1.57,
+							"name": "Film Classroom (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "ring",
+				"position": {
+					"x": -7.526768684387207,
+					"y": 9.5839872360229492,
+					"z": 2.584202766418457
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "TourAssets.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
 							"pRotationZ": 1.57,
 							"mRotationX": -1.57,
 							"mRotationZ": -1.57,
-							"name": "Vari Hallway (Main story arrow)"
+							"name": "Film Classroom (Main story ring)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow2",
+				"position": {
+					"x": -6.612,
+					"y": 0.006,
+					"z": 4.303
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 0.785,
+							"mRotationX": -1.57,
+							"mRotationZ": -0.785,
+							"name": "Film Classroom (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "ring",
+				"position": {
+					"x": -1.7454136610031128,
+					"y": 9.5955344438552856,
+					"z": 6.80668830871582
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "TourAssets.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": -1.57,
+							"name": "Film Classroom (Main story ring)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow1",
+				"position": {
+					"x": -1.945,
+					"y": 0.01,
+					"z": 6.44
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 0.785,
+							"mRotationX": -1.57,
+							"mRotationZ": 1.57,
+							"name": "Film Classroom (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow2",
+				"position": {
+					"x": -1.4,
+					"y": 0.01,
+					"z": 6.46
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 0.785,
+							"mRotationX": -1.57,
+							"mRotationZ": 0.785,
+							"name": "Film Classroom (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "ring",
+				"position": {
+					"x": -2.076,
+					"y": -0.001,
+					"z": 2.017
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "TourAssets.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": -1.57,
+							"name": "Film Classroom (Main story ring)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow2",
+				"position": {
+					"x": -1.3,
+					"y": 0.002,
+					"z": 2.601
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 0.785,
+							"mRotationX": -1.57,
+							"mRotationZ": -0.785,
+							"name": "Film Classroom (Main story arrow)"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,
