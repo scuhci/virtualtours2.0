@@ -3,16 +3,20 @@ import { createUserDocumentFromAuth, onAuthStateChangedListener } from '../util/
 
 export const UserContext = createContext({
     currentUser: null,
+    showSignIn: false,
     setCurrentUser: (() => null) as Dispatch<any>,
+    setShowSignIn: (() => false) as Dispatch<any>
 })
 
 export const UserProvider = (props: any) => {
     const { children } = props;
     const [currentUser, setCurrentUser] = useState(null);
-    const value = { currentUser, setCurrentUser };
+    const [showSignIn, setShowSignIn] = useState(false);
+    const value = { currentUser, setCurrentUser, showSignIn, setShowSignIn };
     useEffect(() => {
         const unsubscribe = onAuthStateChangedListener((user: any) => {
             if (user) {
+                setShowSignIn(true);
                 createUserDocumentFromAuth(user);
             }
             setCurrentUser(user);

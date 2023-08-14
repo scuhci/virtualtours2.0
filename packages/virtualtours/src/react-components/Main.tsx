@@ -194,6 +194,7 @@ export class MainView extends Component<Props, State> {
   }
 
   async componentDidMount() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.sdk = await GetSDK('sdk-iframe', this.sdkKey);
     console.log(this.isMobile);
     //Add Mattertags. 

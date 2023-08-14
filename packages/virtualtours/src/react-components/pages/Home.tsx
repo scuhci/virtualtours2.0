@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext"
 import { signInMessage, clearSignInMessage } from '../../util/msgUtil';
 const Home = () => {
-	const { currentUser } = useContext(UserContext);
+	const { currentUser, showSignIn, setShowSignIn } = useContext(UserContext);
 	useEffect(() => {
 		let id = window.location.href.split('/')[3];
 		if (id) id = id.substring(1);
@@ -12,15 +12,16 @@ const Home = () => {
 			const scrollDiv = element.offsetTop;
 			window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
 		}
-		if (currentUser) {
+		if (showSignIn) {
 			signInMessage("You are signed in");
 			setTimeout(() => {
 				clearSignInMessage()
 			}, 1000);
+			setShowSignIn(false);
 		}
 
-
 	}, [])
+
 
 	return (
 		<>
