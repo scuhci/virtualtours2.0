@@ -19,7 +19,7 @@ const App = () => {
     })
   }, [])
   const element = useRoutes([
-    { path: "/", element: <Home /> },
+    { path: "/", element: <MainView /> },
     { path: "/:id", element: <Home /> },
     { path: "/tour", element: <MainView /> },
     { path: "/login", element: <Authentication /> },

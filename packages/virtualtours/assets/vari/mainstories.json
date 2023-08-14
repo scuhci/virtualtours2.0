@@ -161,7 +161,7 @@
 			},
 			{
 				"id": "2127b5a75a0f4b3a806a2d4e782834df",
-				"name": "",
+				"name": "ring",
 				"position": {
 					"x": -23.05,
 					"y": 0.1500285530090332,
@@ -228,6 +228,474 @@
 							"mRotationX": -1.57,
 							"mRotationZ": 0,
 							"name": "Main Hallway in front of Stairs(arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "2127b5a75a0f4b3a806a2d4e782834df",
+				"name": "ring",
+				"position": {
+					"x": -34,
+					"y": 0.019,
+					"z": -27.523
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "TourAssets.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": -1.57,
+							"pRotationZ": -1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": -1.57,
+							"name": "Main Hallway in front of Stairs(ring)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow2",
+				"position": {
+					"x": -33.4777,
+					"y": 0.019,
+					"z": -27.523
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": 0,
+							"name": "Main Hallway in front of Stairs(arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow1",
+				"position": {
+					"x": -23.023,
+					"y": -0.0053,
+					"z": -11.02
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": -1.57,
+							"name": "Vari Hallway (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "ring",
+				"position": {
+					"x": -22.992,
+					"y": -0.006,
+					"z": -10.52
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "TourAssets.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": -1.57,
+							"name": "Vari Hallway (Main story ring)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow2",
+				"position": {
+					"x": -22.517,
+					"y": -0.0057,
+					"z": -10.53
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 0,
+							"mRotationX": -1.57,
+							"mRotationZ": 0,
+							"name": "Vari Hallway (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow1",
+				"position": {
+					"x": -18.4,
+					"y": -0.007,
+					"z": -10.42
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": 0,
+							"name": "Vari Hallway (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow2",
+				"position": {
+					"x": -17.48,
+					"y": -0.01064,
+					"z": -9.564
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": -1.57,
+							"name": "Vari Hallway (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow1",
+				"position": {
+					"x": -15.787,
+					"y": 0.0065,
+					"z": -2.6595
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": 0,
+							"name": "Vari Hallway (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow2",
+				"position": {
+					"x": -17.462,
+					"y": 0.0065,
+					"z": -2.6595
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": 0,
+							"name": "Vari Hallway (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow1",
+				"position": {
+					"x": -9.0042,
+					"y": 0.00623,
+					"z": -2.73
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": 0,
+							"name": "Vari Hallway (Main story arrow)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "ring",
+				"position": {
+					"x": -5.39,
+					"y": -0.011,
+					"z": -2.601
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "TourAssets.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": -1.57,
+							"name": "Vari Hallway (Main story ring)"
+						},
+						"events": {
+							"INTERACTION.CLICK": true,
+							"INTERACTION.HOVER": true,
+							"INTERACTION.DRAG": false
+						}
+					}
+				]
+			},
+			{
+				"id": "d0dd3b63684443db96797fe84ee94441",
+				"name": "arrow2",
+				"position": {
+					"x": -23.05,
+					"y": 0.1500285530090332,
+					"z": -21.81281280517578
+				},
+				"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				},
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				},
+				"components": [
+					{
+						"type": "vt.path",
+						"inputs": {
+							"image": "Follow.png",
+							"width": 0.5,
+							"height": 0.5,
+							"pRotationY": 0,
+							"pRotationZ": 1.57,
+							"mRotationX": -1.57,
+							"mRotationZ": -1.57,
+							"name": "Vari Hallway (Main story arrow)"
 						},
 						"events": {
 							"INTERACTION.CLICK": true,

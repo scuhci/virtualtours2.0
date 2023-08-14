@@ -16,7 +16,7 @@ import { getSCDIImage, getVariImage } from "./tagsUtil";
 export const getModelSid = (key: string) => {
 	if (key === "vari") {
 		return "eE6srFdgFSR";
-	} else if (key === "heafey") {
+	} else if (key === "heafy") {
 		return "y3JKgGFsRHT";
 	} else if (key === "scdi") {
 		return "LZdrLZWckqe";

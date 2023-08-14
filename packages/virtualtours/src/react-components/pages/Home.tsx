@@ -74,9 +74,14 @@ const Home = () => {
 									<img src="./../../assets/images/landing-page/cyle.jpg" width="250" height="250" />
 								</div>
 								<div className="content">
-									<h2>Cyle</h2>
+									<h2>Saunder</h2>
 									<p>A little info describing tour.</p>
-									<a href="https://my.treedis.com/tour/vari-tv" target="_blank" rel="noopener noreferrer" className="btn">See Tour</a>
+									{currentUser && <Link className='btn' to='/tour?id=heafy'>
+										See Tour
+									</Link>}
+									{!currentUser && <Link className='btn' to='/login'>
+										Sign in to see the tours
+									</Link>}
 								</div>
 							</div>
 						</div>
