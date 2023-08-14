@@ -59,7 +59,7 @@ export class MainView extends Component<Props, State> {
   private addMattertagNode1 = (sdk: any) => {
     let matterTags: any = [];
     const hotspots = getHotspots(this.spaceId);
-    hotspots.map((e) => {
+    hotspots.map((e: any) => {
       matterTags.push({
         tourId: e.tourId,
         label: e.title,
