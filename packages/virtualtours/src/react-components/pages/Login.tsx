@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword } from '../../util/firebaseUtil';
 import FormInput from '../form-input';
 import Button from '../button';
+import { Navigate } from "react-router-dom";
+import { UserContext } from "../../contexts/UserContext";
+
 const defaultUser = {
 	email: "",
 	password: "",
 }
 const Login = () => {
+	const { currentUser } = useContext(UserContext);
 	const [user, setUser] = useState(defaultUser);
 	const { email, password } = user;
-
 	const resetFormFields = () => {
 		setUser(defaultUser)
 	}
@@ -42,18 +45,21 @@ const Login = () => {
 		}
 	};
 	return (
-		<div className='sign-up-container'>
-			<h2>Already have an account?</h2>
-			<span>Sign in with your email and password</span>
-			<form>
-				<FormInput label='Email' inputOptions={{ type: 'text', name: 'email', value: email, onChange: handleInputChange, required: true }} />
-				<FormInput label='Password' inputOptions={{ type: 'password', name: 'password', value: password, onChange: handleInputChange, required: true }} />
-				<div className='buttons-container'>
-					<Button onClick={handleSubmit} type="submit">Sign in</Button>
-					<Button onClick={signInWithGooglePopup} type="button" buttonType='google'>Google Sign in</Button>
-				</div>
-			</form>
-		</div>
+		<>
+			{currentUser && <Navigate to="/" />}
+			<div className='sign-up-container'>
+				<h2>Already have an account?</h2>
+				<span>Sign in with your email and password</span>
+				<form>
+					<FormInput label='Email' inputOptions={{ type: 'text', name: 'email', value: email, onChange: handleInputChange, required: true }} />
+					<FormInput label='Password' inputOptions={{ type: 'password', name: 'password', value: password, onChange: handleInputChange, required: true }} />
+					<div className='buttons-container'>
+						<Button onClick={handleSubmit} type="submit">Sign in</Button>
+						<Button onClick={signInWithGooglePopup} type="button" buttonType='google'>Google Sign in</Button>
+					</div>
+				</form>
+			</div>
+		</>
 	);
 }
 
