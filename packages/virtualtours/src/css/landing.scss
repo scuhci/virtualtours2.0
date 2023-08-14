@@ -72,6 +72,15 @@ header.sticky ul li a {
   
 
 /* ------------------- BANNER/HOMEPAGE ------------------- */
+#signintext {
+    color: #f5f4f3;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    font-size: 20px;
+    z-index: 1000;
+    transform: translateX(-50%);
+}
 .banner {
     position: relative;
     width: 100%;

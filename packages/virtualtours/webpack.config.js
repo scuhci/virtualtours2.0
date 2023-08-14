@@ -10,8 +10,8 @@ module.exports = {
 	},
 	entry: "./src/index.tsx",
 	output: {
-	    filename: 'js/[name].bundle.js',
-	    path: path.resolve(__dirname, "dist")
+		filename: "js/[name].bundle.js",
+		path: path.resolve(__dirname, "dist"),
 	},
 	devtool: "source-map",
 	resolve: {
@@ -32,6 +32,27 @@ module.exports = {
 				use: ["style-loader", "css-loader"],
 			},
 			{ enforce: "pre", test: /\.js$/, use: ["source-map-loader"] },
+			{
+				test: /\.scss$/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: "style-loader",
+					},
+					{
+						loader: "css-loader",
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: "sass-loader",
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
 		],
 	},
 	plugins: [
