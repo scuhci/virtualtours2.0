@@ -21,6 +21,9 @@ export class MainView extends Component<Props, State> {
   private sdkKey: string = sdkKey;
   private isMobile: boolean = false;
   private spaceId: string = "";
+  state = {
+    floorId: "0",
+  }
   constructor(props: Props) {
     super(props);
     this.isMobile = window.matchMedia("(min-width: 768px)").matches;
@@ -58,7 +61,7 @@ export class MainView extends Component<Props, State> {
   }
   private addMattertagNode1 = (sdk: any) => {
     let matterTags: any = [];
-    const hotspots = getHotspots(this.spaceId);
+    const hotspots = getHotspots(this.spaceId, this.state.floorId);
     hotspots.map((e: any) => {
       matterTags.push({
         tourId: e.tourId,
@@ -197,6 +200,25 @@ export class MainView extends Component<Props, State> {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     this.sdk = await GetSDK('sdk-iframe', this.sdkKey);
     console.log(this.isMobile);
+    this.sdk.Floor.current.subscribe((currentFloor: any) => {
+      // Change to the current floor has occurred.
+      if (currentFloor.sequence === -1) {
+        console.log('Currently viewing all floors');
+      } else if (currentFloor.sequence === undefined) {
+        if (currentFloor.id === undefined) {
+          console.log('Current viewing an unplaced unaligned sweep');
+        } else {
+          console.log('Currently transitioning between floors');
+        }
+      } else {
+        this.setState({
+          floorId: currentFloor.id.toString()
+        })
+        console.log('Currently on floor', currentFloor.id);
+        console.log('Current floor\'s sequence index', currentFloor.sequence);
+        console.log('Current floor\'s name', currentFloor.name)
+      }
+    });
     //Add Mattertags. 
     this.addMattertagNode1(this.sdk);
     //Sets rooms that have sensors. 
@@ -226,7 +248,7 @@ export class MainView extends Component<Props, State> {
       }
     });
     const sourcePromises = [];
-    const sourceDescs = getSources(this.spaceId);
+    const sourceDescs = getSources(this.spaceId, this.state.floorId);
     for (const desc of sourceDescs) {
       sourcePromises.push(this.sdk.Sensor.createSource(desc.type, desc.options));
     }
@@ -300,27 +322,27 @@ export class MainView extends Component<Props, State> {
     });
 
     //Create all sweeps 
-    const sweeps = getSweeps(this.spaceId);
+    const sweeps = getSweeps(this.spaceId, this.state.floorId);
     const sweep_nodes = await this.sdk.Scene.deserialize(JSON.stringify(sweeps));
     for (let i = 0; i < sweep_nodes.length; ++i) {
       sweep_nodes[i].start();
     }
     //Create all signs 
-    const signs = getSigns(this.spaceId);
+    const signs = getSigns(this.spaceId, this.state.floorId);
     const sign_nodes = await this.sdk.Scene.deserialize(JSON.stringify(signs));
     for (let i = 0; i < sign_nodes.length; ++i) {
       sign_nodes[i].start();
     }
 
     //Creates side story path rings
-    const sidestories = getSideStories(this.spaceId);
+    const sidestories = getSideStories(this.spaceId, this.state.floorId);
     const side_story_nodes = await this.sdk.Scene.deserialize(JSON.stringify(sidestories));
     for (let i = 0; i < side_story_nodes.length; ++i) {
       side_story_nodes[i].position.set(side_story_nodes[i].position.x, 0.0400285530090332, side_story_nodes[i].position.z);
       side_story_nodes[i].start();
     }
     //Creates main story path rings and arrows 
-    const mainstories = getMainStories(this.spaceId);
+    const mainstories = getMainStories(this.spaceId, this.state.floorId);
     const main_story_nodes = await this.sdk.Scene.deserialize(JSON.stringify(mainstories));
     for (let i = 0; i < main_story_nodes.length; ++i) {
       main_story_nodes[i].position.set(main_story_nodes[i].position.x, 0.0400285530090332, main_story_nodes[i].position.z);
