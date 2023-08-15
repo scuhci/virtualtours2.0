@@ -61,7 +61,7 @@ export class MainView extends Component<Props, State> {
   }
   private addMattertagNode1 = (sdk: any) => {
     let matterTags: any = [];
-    const hotspots = getHotspots(this.spaceId, this.state.floorId);
+    const hotspots = getHotspots(this.spaceId);
     hotspots.map((e: any) => {
       matterTags.push({
         tourId: e.tourId,
@@ -248,7 +248,7 @@ export class MainView extends Component<Props, State> {
       }
     });
     const sourcePromises = [];
-    const sourceDescs = getSources(this.spaceId, this.state.floorId);
+    const sourceDescs = getSources(this.spaceId);
     for (const desc of sourceDescs) {
       sourcePromises.push(this.sdk.Sensor.createSource(desc.type, desc.options));
     }
@@ -322,27 +322,27 @@ export class MainView extends Component<Props, State> {
     });
 
     //Create all sweeps 
-    const sweeps = getSweeps(this.spaceId, this.state.floorId);
+    const sweeps = getSweeps(this.spaceId);
     const sweep_nodes = await this.sdk.Scene.deserialize(JSON.stringify(sweeps));
     for (let i = 0; i < sweep_nodes.length; ++i) {
       sweep_nodes[i].start();
     }
     //Create all signs 
-    const signs = getSigns(this.spaceId, this.state.floorId);
+    const signs = getSigns(this.spaceId);
     const sign_nodes = await this.sdk.Scene.deserialize(JSON.stringify(signs));
     for (let i = 0; i < sign_nodes.length; ++i) {
       sign_nodes[i].start();
     }
 
     //Creates side story path rings
-    const sidestories = getSideStories(this.spaceId, this.state.floorId);
+    const sidestories = getSideStories(this.spaceId);
     const side_story_nodes = await this.sdk.Scene.deserialize(JSON.stringify(sidestories));
     for (let i = 0; i < side_story_nodes.length; ++i) {
       side_story_nodes[i].position.set(side_story_nodes[i].position.x, 0.0400285530090332, side_story_nodes[i].position.z);
       side_story_nodes[i].start();
     }
     //Creates main story path rings and arrows 
-    const mainstories = getMainStories(this.spaceId, this.state.floorId);
+    const mainstories = getMainStories(this.spaceId);
     const main_story_nodes = await this.sdk.Scene.deserialize(JSON.stringify(mainstories));
     for (let i = 0; i < main_story_nodes.length; ++i) {
       main_story_nodes[i].position.set(main_story_nodes[i].position.x, 0.0400285530090332, main_story_nodes[i].position.z);

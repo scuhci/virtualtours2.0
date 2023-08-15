@@ -11,28 +11,28 @@ export const getModelSid = (key: string) => {
 		return "eE6srFdgFSR";
 	}
 }; // Venus: This is Cyle's tour.
-export const getHotspots = (key: string, floorId: string) => {
-	let hotspots = require(`../../assets/${key}/${floorId}/hotspots.json`);
+export const getHotspots = (key: string) => {
+	let hotspots = require(`../../assets/${key}/hotspots.json`);
 	return hotspots;
 };
-export const getSweeps = (key: string, floorId: string) => {
-	let sweeps = require(`../../assets/${key}/${floorId}/sweeps.json`);
+export const getSweeps = (key: string) => {
+	let sweeps = require(`../../assets/${key}/sweeps.json`);
 	return sweeps;
 };
-export const getSigns = (key: string, floorId: string) => {
-	let signs = require(`../../assets/${key}/${floorId}/signs.json`);
+export const getSigns = (key: string) => {
+	let signs = require(`../../assets/${key}/signs.json`);
 	return signs;
 };
-export const getSources = (key: string, floorId: string) => {
-	let sourceDescs = require(`../../assets/${key}/${floorId}/sources.json`);
+export const getSources = (key: string) => {
+	let sourceDescs = require(`../../assets/${key}/sources.json`);
 	return sourceDescs;
 };
-export const getSideStories = (key: string, floorId: string) => {
-	let sidestories = require(`../../assets/${key}/${floorId}/sidestories.json`);
+export const getSideStories = (key: string) => {
+	let sidestories = require(`../../assets/${key}/sidestories.json`);
 	return sidestories;
 };
-export const getMainStories = (key: string, floorId: string) => {
-	let mainstories = require(`../../assets/${key}/${floorId}/mainstories.json`);
+export const getMainStories = (key: string) => {
+	let mainstories = require(`../../assets/${key}/mainstories.json`);
 	return mainstories;
 };
 export const getImage = (key: string, label: string) => {
