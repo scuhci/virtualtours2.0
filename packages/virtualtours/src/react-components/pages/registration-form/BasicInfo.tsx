@@ -5,6 +5,17 @@ const BasicInfo = (props: any) => {
     const { navigation, onChange, inputFields } = props;
     const { displayName, email, password, confirmPassword } = inputFields;
     const { next } = navigation;
+    const handleNext = () => {
+        if (!displayName || !email || !password || !confirmPassword) {
+            alert("Please fill in the empty fields!");
+            return;
+        }
+        if (password !== confirmPassword) {
+            alert("Please make sure confirmPassword is same as password!");
+            return;
+        }
+        next();
+    }
     return (
         <>
             <span>Please provide your name and email for signing up</span>
@@ -24,7 +35,7 @@ const BasicInfo = (props: any) => {
                 <FormInput label='Password' inputOptions={{ type: 'password', name: 'password', value: password, onChange: onChange, required: true }} />
                 <FormInput label='Confirm Password' inputOptions={{ type: 'password', name: 'confirmPassword', value: confirmPassword, onChange: onChange, required: true }} />
                 <div>
-                    <button className="button-container" onClick={next}>Next</button>
+                    <button className="button-container" onClick={handleNext}>Next</button>
                 </div>
             </div>
         </>

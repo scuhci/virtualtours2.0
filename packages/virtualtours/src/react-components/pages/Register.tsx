@@ -15,7 +15,7 @@ const defaultInputFields = {
 }
 const Register = () => {
 	const [inputFields, setInputFields] = useState(defaultInputFields);
-	const { displayName, email, password, confirmPassword } = inputFields;
+	const { displayName, email, password, confirmPassword, enrollmentYear, school, firstName, lastName } = inputFields;
 	const resetFormFields = () => {
 		setInputFields(defaultInputFields)
 	}
@@ -35,6 +35,10 @@ const Register = () => {
 			alert("Passwords don't match!");
 			return;
 		}
+		if (enrollmentYear === "0" || !school || !firstName || !lastName) {
+			alert("Form is incomplete!");
+			return;
+		}
 		try {
 			const { user } = await createAuthUserWithEmailAndPassword(email, password);
 			await createUserDocumentFromAuth(user, { displayName, role: inputFields.role, firstName: inputFields.firstName, lastName: inputFields.lastName, enrollmentYear: inputFields.enrollmentYear, school: inputFields.school, studentEmail: inputFields.studentEmail });
@@ -50,7 +54,6 @@ const Register = () => {
 	return (
 		<div className='sign-up-container'>
 			<h2>Don't have an account?</h2>
-
 			<MultiStepForm onSubmit={handleSubmit} onChange={handleInputChange} inputFields={inputFields} />
 		</div>
 	);

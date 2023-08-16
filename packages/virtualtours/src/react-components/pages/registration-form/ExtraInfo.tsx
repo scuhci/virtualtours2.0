@@ -3,7 +3,7 @@ import FormInput from '../../form-input';
 
 const ExtraInfo = (props: any) => {
     const { navigation, onChange, inputFields, onSubmit } = props;
-    const { role, firstName, lastName, email, enrollmentYear, school, studentEmail } = inputFields;
+    const { role, firstName, lastName, enrollmentYear, school, studentEmail } = inputFields;
     const { previous } = navigation;
     let currentYear = new Date().getFullYear();
     const startYears = [];
@@ -39,7 +39,7 @@ const ExtraInfo = (props: any) => {
                 <FormInput label='School Name' inputOptions={{ type: 'text', name: 'school', value: school, onChange: onChange, required: true }} />
                 <div className='buttons-container'>
                     <button className="button-container" onClick={previous}>Previous</button>
-                    <button className="button-container" onClick={onSubmit}>Submit</button>
+                    <button type="submit" className="button-container" onClick={onSubmit}>Submit</button>
 
                 </div>
             </div>

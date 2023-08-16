@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStep, UseStepResponse } from 'react-hooks-helper';
+import { useStep } from 'react-hooks-helper';
 import BasicInfo from './BasicInfo';
 import ExtraInfo from './ExtraInfo';
 
