@@ -1,13 +1,17 @@
 import React, { useState, } from "react";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../util/firebaseUtil';
-import FormInput from '../form-input';
-import Button from '../button';
+import MultiStepForm from "./registration-form/MultiStepForm";
 const defaultInputFields = {
+	firstName: "",
+	lastName: "",
 	displayName: "",
 	email: "",
+	studentEmail: "",
 	password: "",
 	confirmPassword: "",
 	role: "default",
+	enrollmentYear: "0",
+	school: ""
 }
 const Register = () => {
 	const [inputFields, setInputFields] = useState(defaultInputFields);
@@ -33,7 +37,7 @@ const Register = () => {
 		}
 		try {
 			const { user } = await createAuthUserWithEmailAndPassword(email, password);
-			await createUserDocumentFromAuth(user, { displayName, role: inputFields.role });
+			await createUserDocumentFromAuth(user, { displayName, role: inputFields.role, firstName: inputFields.firstName, lastName: inputFields.lastName, enrollmentYear: inputFields.enrollmentYear, school: inputFields.school, studentEmail: inputFields.studentEmail });
 			resetFormFields();
 		} catch (error) {
 			if (error.code === 'auth/email-already-in-use') {
@@ -46,24 +50,8 @@ const Register = () => {
 	return (
 		<div className='sign-up-container'>
 			<h2>Don't have an account?</h2>
-			<span>Sign up with your email and password</span>
-			<form>
-				<div className="group">
-					<select name="role" value={inputFields.role} onChange={handleInputChange} defaultValue="default" className="form-select">
-						<option value="default" disabled>
-							Select your role
-        				</option>
-						<option value="Parent">Parent</option>
-						<option value="Student">Student</option>
-						<option value="Educator">Educator</option>
-					</select>
-				</div>
-				<FormInput label='Display Name' inputOptions={{ type: 'text', name: 'displayName', value: displayName, onChange: handleInputChange, required: true }} />
-				<FormInput label='Email' inputOptions={{ type: 'text', name: 'email', value: email, onChange: handleInputChange, required: true }} />
-				<FormInput label='Password' inputOptions={{ type: 'password', name: 'password', value: password, onChange: handleInputChange, required: true }} />
-				<FormInput label='Confirm Password' inputOptions={{ type: 'password', name: 'confirmPassword', value: confirmPassword, onChange: handleInputChange, required: true }} />
-				<Button onClick={handleSubmit}>Sign up</Button>
-			</form>
+
+			<MultiStepForm onSubmit={handleSubmit} onChange={handleInputChange} inputFields={inputFields} />
 		</div>
 	);
 }
