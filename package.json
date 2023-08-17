@@ -27,7 +27,7 @@
 	"scripts": {
 		"bootstrap": "lerna bootstrap && lerna link",
 		"clean": "lerna clean --yes",
-		"clean-install": "yarn clean ; yarn install ; yarn install-bundle ; yarn bootstrap; yarn build-all-dev",
+		"clean-install": "yarn clean ; yarn install ; yarn bootstrap; yarn build-all-dev",
 		"build-all-dev": "lerna run build-dev",
 		"build-all-prod": "lerna run build-prod",
 		"virtualtours": "lerna run develop --scope=virtualtours --stream --no-sort",

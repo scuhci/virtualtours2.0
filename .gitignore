@@ -7,5 +7,4 @@ dist
 version.txt
 bundle.zip
 
-packages/bundle/*
 !package.json
