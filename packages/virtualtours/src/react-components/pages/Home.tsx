@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext"
 import { signInMessage, clearSignInMessage } from '../../util/msgUtil';
 const Home = () => {
-	const { currentUser } = useContext(UserContext);
+	const { currentUser, showSignIn, setShowSignIn } = useContext(UserContext);
 	useEffect(() => {
 		let id = window.location.href.split('/')[3];
 		if (id) id = id.substring(1);
@@ -12,15 +12,16 @@ const Home = () => {
 			const scrollDiv = element.offsetTop;
 			window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
 		}
-		if (currentUser) {
+		if (showSignIn) {
 			signInMessage("You are signed in");
 			setTimeout(() => {
 				clearSignInMessage()
 			}, 1000);
+			setShowSignIn(false);
 		}
 
-
 	}, [])
+
 
 	return (
 		<>
@@ -54,7 +55,7 @@ const Home = () => {
 								<div className="content">
 									<h2>Cyle</h2>
 									<p>A little info describing tour.</p>
-									{currentUser && <Link className='btn' to='/tour'>
+									{currentUser && <Link className='btn' to='/tour?id=vari'>
 										See Tour
 									</Link>}
 									{!currentUser && <Link className='btn' to='/login'>
@@ -69,7 +70,12 @@ const Home = () => {
 								<div className="content">
 									<h2>Kimberley</h2>
 									<p>A little info describing tour.</p>
-									<a href="https://my.treedis.com/tour/scdi-tour" target="_blank" rel="noopener noreferrer" className="btn">See Tour</a>
+									{currentUser && <Link className='btn' to='/tour?id=scdi'>
+										See Tour
+									</Link>}
+									{!currentUser && <Link className='btn' to='/login'>
+										Sign in to see the tours
+									</Link>}
 								</div>
 							</div>
 							<div className="box">
@@ -77,9 +83,14 @@ const Home = () => {
 									<img src="./../../assets/images/landing-page/cyle.jpg" width="250" height="250" />
 								</div>
 								<div className="content">
-									<h2>Cyle</h2>
+									<h2>Saunder</h2>
 									<p>A little info describing tour.</p>
-									<a href="https://my.treedis.com/tour/vari-tv" target="_blank" rel="noopener noreferrer" className="btn">See Tour</a>
+									{currentUser && <Link className='btn' to='/tour?id=heafy'>
+										See Tour
+									</Link>}
+									{!currentUser && <Link className='btn' to='/login'>
+										Sign in to see the tours
+									</Link>}
 								</div>
 							</div>
 						</div>

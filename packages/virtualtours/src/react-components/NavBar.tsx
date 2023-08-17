@@ -14,6 +14,10 @@ const NavBar = () => {
 		// header.classList.toggle("active");
 	}
 	const { currentUser } = useContext(UserContext);
+	const handleToggle = () => {
+		var header = document.querySelector("header");
+		header.classList.toggle("active");
+	}
 	return (
 		<>
 			<header id="header">
@@ -37,7 +41,8 @@ const NavBar = () => {
 					<li>
 						{
 							currentUser ? (
-								<div className='nav-links' onClick={signOutUser}>Sign Out</div>) : (
+								<Link to='#'>
+									<div className='nav-links' onClick={signOutUser}>Sign Out</div>  </Link>) : (
 									<Link className='nav-links' to='/login'>
 										Sign In
 									</Link>
@@ -45,6 +50,7 @@ const NavBar = () => {
 						}
 					</li>
 				</ul>
+				<div className="toggle" onClick={handleToggle}></div>
 			</header>
 		</>
 	);

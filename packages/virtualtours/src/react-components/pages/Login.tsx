@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword } from '../../util/firebaseUtil';
 import FormInput from '../form-input';
 import Button from '../button';
@@ -13,6 +13,9 @@ const Login = () => {
 	const { currentUser } = useContext(UserContext);
 	const [user, setUser] = useState(defaultUser);
 	const { email, password } = user;
+	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}, [])
 	const resetFormFields = () => {
 		setUser(defaultUser)
 	}

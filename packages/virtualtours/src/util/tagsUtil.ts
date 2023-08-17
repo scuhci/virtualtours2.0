@@ -11,8 +11,9 @@ import blue from "/assets/images/tags/ImportantBlue.png";
 import sculogo from "/assets/images/tags/SCULogo.png";
 import audioicon from "/assets/images/tags/AudioIcon.png";
 import info from "/assets/images/tags/Info.png";
+import important from "/assets/images/tags/Important.png";
 
-export const getImage = (label: String): any => {
+export const getVariImage = (label: String): any => {
 	if (label === "(1/8) Meet your tour guide!") {
 		return icon1;
 	}
@@ -81,6 +82,24 @@ export const getImage = (label: String): any => {
 		label === "Casting Call Flyer" ||
 		label === "Audio Video Control Room" ||
 		label === "Film Labs"
+	) {
+		return sculogo;
+	}
+};
+
+export const getSCDIImage = (label: String): any => {
+	if (
+		label === "SCDI Intro" ||
+		label === "Meet Kimberly!" ||
+		label === "FreshBytes"
+	) {
+		return important;
+	}
+	if (
+		label === "SCDI -- Sobrato Campus for Discovery and Innovation" ||
+		label === "The Sunstream Café" ||
+		label === "Joseph & Chelsea Freeman Robotics Systems Lab" ||
+		label === "DISC - Diversity and Inclusion Student Center"
 	) {
 		return sculogo;
 	}
