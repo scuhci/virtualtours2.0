@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, FormEvent, ChangeEvent } from "react";
 import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword } from '../../util/firebaseUtil';
 import FormInput from '../form-input';
 import Button from '../button';
@@ -19,7 +19,7 @@ const Login = () => {
 	const resetFormFields = () => {
 		setUser(defaultUser)
 	}
-	const handleInputChange = (event: any) => {
+	const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target;
 		setUser((prev) => {
 			return {
@@ -29,7 +29,7 @@ const Login = () => {
 		})
 
 	}
-	const handleSubmit = async (event: any) => {
+	const handleSubmit = async (event: FormEvent<HTMLButtonElement>) => {
 		event.preventDefault();
 		try {
 			await signInAuthUserWithEmailAndPassword(email, password);

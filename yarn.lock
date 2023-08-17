@@ -7006,7 +7006,7 @@ react-dropzone@^10.2.0:
 
 react-hooks-helper@^1.6.0:
   version "1.6.0"
-  resolved "https://registry.npmjs.org/react-hooks-helper/-/react-hooks-helper-1.6.0.tgz"
+  resolved "https://registry.yarnpkg.com/react-hooks-helper/-/react-hooks-helper-1.6.0.tgz#d4105f8745471600b38dc450260d513553c883b1"
   integrity sha512-DlyWQ99tgwyDdJfTihCXT6AftYymxhA2LS60vBCTOpclmjPxqDwDTLjVK0kbIc3XsgJvxkanW8TwHE0jrIB8hA==
 
 react-is@^16.13.1, react-is@^16.7.0:

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { FC, ButtonHTMLAttributes } from "react";
 
+export type ButtonProps = {
+    buttonType?: string
+} & ButtonHTMLAttributes<HTMLButtonElement>
 
-const Button = (props: any) => {
-    const { children, buttonType, ...otherProps } = props;
+const Button: FC<ButtonProps> = ({ children, buttonType, ...otherProps }) => {
     return (
         <button className={`button-container ${buttonType === 'google' ? 'google-sign-in' : ''}`} {...otherProps}>
             {children}

@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import FormInput from '../../form-input';
+import { NavigationProps } from 'react-hooks-helper';
+import { IInputFields } from '../../../interfaces';
 
-const BasicInfo = (props: any) => {
-    const { navigation, onChange, inputFields } = props;
+export type BasicInfoProps = {
+    navigation: NavigationProps;
+    onChange: (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+    inputFields: IInputFields
+}
+
+const BasicInfo = ({ navigation, onChange, inputFields }: BasicInfoProps) => {
     const { displayName, email, password, confirmPassword } = inputFields;
     const { next } = navigation;
     const handleNext = () => {

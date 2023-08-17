@@ -7,9 +7,11 @@ export const UserContext = createContext({
     setCurrentUser: (() => null) as Dispatch<any>,
     setShowSignIn: (() => false) as Dispatch<any>
 })
+type UserProviderProps = {
+    children: JSX.Element
+}
 
-export const UserProvider = (props: any) => {
-    const { children } = props;
+export const UserProvider = ({ children }: UserProviderProps) => {
     const [currentUser, setCurrentUser] = useState(null);
     const [showSignIn, setShowSignIn] = useState(false);
     const value = { currentUser, setCurrentUser, showSignIn, setShowSignIn };
