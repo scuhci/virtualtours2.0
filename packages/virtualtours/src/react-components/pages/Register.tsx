@@ -1,4 +1,4 @@
-import React, { useState, } from "react";
+import React, { ChangeEvent, FormEvent, useState, } from "react";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../util/firebaseUtil';
 import MultiStepForm from "./registration-form/MultiStepForm";
 const defaultInputFields = {
@@ -13,13 +13,14 @@ const defaultInputFields = {
 	enrollmentYear: "0",
 	school: ""
 }
+
 const Register = () => {
 	const [inputFields, setInputFields] = useState(defaultInputFields);
 	const { displayName, email, password, confirmPassword, enrollmentYear, school, firstName, lastName } = inputFields;
 	const resetFormFields = () => {
 		setInputFields(defaultInputFields)
 	}
-	const handleInputChange = (event: any) => {
+	const handleInputChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
 		const { name, value } = event.target;
 		setInputFields((prev) => {
 			return {
@@ -29,7 +30,7 @@ const Register = () => {
 		})
 
 	}
-	const handleSubmit = async (event: any) => {
+	const handleSubmit = async (event: FormEvent<HTMLButtonElement>) => {
 		event.preventDefault();
 		if (password !== confirmPassword) {
 			alert("Passwords don't match!");
@@ -40,8 +41,11 @@ const Register = () => {
 			return;
 		}
 		try {
-			const { user } = await createAuthUserWithEmailAndPassword(email, password);
-			await createUserDocumentFromAuth(user, { displayName, role: inputFields.role, firstName: inputFields.firstName, lastName: inputFields.lastName, enrollmentYear: inputFields.enrollmentYear, school: inputFields.school, studentEmail: inputFields.studentEmail });
+			const userCredential = await createAuthUserWithEmailAndPassword(email, password);
+			if (userCredential) {
+				const { user } = userCredential;
+				await createUserDocumentFromAuth(user, { displayName, role: inputFields.role, firstName: inputFields.firstName, lastName: inputFields.lastName, enrollmentYear: inputFields.enrollmentYear, school: inputFields.school, studentEmail: inputFields.studentEmail });
+			}
 			resetFormFields();
 		} catch (error) {
 			if (error.code === 'auth/email-already-in-use') {

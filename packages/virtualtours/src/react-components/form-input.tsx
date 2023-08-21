@@ -1,7 +1,17 @@
-import React from "react";
+import React, { FC, ChangeEvent } from "react";
 
-const FormInput = (props: any) => {
-    const { label, inputOptions } = props;
+export type inputProps = {
+    label: string,
+    inputOptions: {
+        type: string,
+        name: string,
+        value: string,
+        onChange: (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void,
+        required: boolean
+    }
+}
+
+const FormInput: FC<inputProps> = ({ label, inputOptions }) => {
     return (
         <div className="group">
             <input className="form-input" {...inputOptions} required />

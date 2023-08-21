@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { ChangeEvent, FormEvent } from 'react';
 import FormInput from '../../form-input';
+import { NavigationProps } from 'react-hooks-helper';
+import { IInputFields } from '../../../interfaces';
 
-const ExtraInfo = (props: any) => {
-    const { navigation, onChange, inputFields, onSubmit } = props;
+export type ExtraInfoProps = {
+    navigation: NavigationProps;
+    onChange: (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+    inputFields: IInputFields;
+    onSubmit: (event: FormEvent<HTMLButtonElement>) => Promise<void>;
+}
+const ExtraInfo = ({ navigation, onChange, inputFields, onSubmit }: ExtraInfoProps) => {
     const { role, firstName, lastName, enrollmentYear, school, studentEmail } = inputFields;
     const { previous } = navigation;
     let currentYear = new Date().getFullYear();

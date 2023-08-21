@@ -1,7 +1,8 @@
-import React from 'react';
-import { useStep } from 'react-hooks-helper';
+import React, { ChangeEvent, FormEvent } from 'react';
+import { useStep, UseStepResponse } from 'react-hooks-helper';
 import BasicInfo from './BasicInfo';
 import ExtraInfo from './ExtraInfo';
+import { IInputFields } from '../../../interfaces';
 
 
 const steps = [
@@ -9,30 +10,16 @@ const steps = [
     { id: "extraInfo" }
 ];
 
-interface useStepType {
-    step: any,
-    navigation: any,
-}
-interface IInputFields {
-    firstName: string,
-    lastName: string,
-    displayName: string,
-    email: string,
-    password: string,
-    confirmPassword: string,
-    role: string,
-    enrollmentYear: string,
-    school: string
-}
-const MultiStepForm = (inputProps: { onSubmit: (event: any) => Promise<void>, onChange: (event: any) => void, inputFields: IInputFields }) => {
-    const { step, navigation }: useStepType = useStep({ initialStep: 0, steps });
-    let { id } = step;
+
+
+const MultiStepForm = (inputProps: { onSubmit: (event: FormEvent<HTMLButtonElement>) => Promise<void>, onChange: (event: ChangeEvent<HTMLInputElement>) => void, inputFields: IInputFields }) => {
+    const { index, navigation }: UseStepResponse = useStep({ initialStep: 0, steps });
     const { onSubmit, onChange, inputFields } = inputProps;
     const props = { navigation, onSubmit, onChange, inputFields };
-    switch (id) {
-        case 'basicInfo':
+    switch (index) {
+        case 0:
             return <BasicInfo {...props} />;
-        case 'extraInfo':
+        case 1:
             return <ExtraInfo {...props} />;
         default:
             return null;
