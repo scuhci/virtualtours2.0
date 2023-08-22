@@ -14,7 +14,7 @@ const ExtraInfo = ({ navigation, onChange, inputFields, onSubmit }: ExtraInfoPro
     const { previous } = navigation;
     let currentYear = new Date().getFullYear();
     const startYears = [];
-    for (let i = currentYear; i <= currentYear + 6; i++) {
+    for (let i = currentYear - 4; i <= currentYear + 6; i++) {
         startYears.push(String(i));
     }
     return (
@@ -34,8 +34,9 @@ const ExtraInfo = ({ navigation, onChange, inputFields, onSubmit }: ExtraInfoPro
                 <div className="group">
                     <select name="enrollmentYear" value={enrollmentYear} onChange={onChange} defaultValue="0" className="form-select">
                         <option value="0" disabled>
-                            Select the enrollment year
-        				</option>
+                            {role !== "Student" && <span>Select the student's enrollment year</span>}
+                            {role === "Student" && <span>Select your enrollment year</span>}
+                        </option>
                         {startYears.map((startYear) => {
                             return (
                                 <option value={startYear}>{startYear}</option>

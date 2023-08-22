@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from '../contexts/UserContext';
 import { signOutUser } from '../util/firebaseUtil';
+import { clearSignInMessage, signInMessage, signOutMessage, clearSignOutMessage } from '../util/msgUtil'
 const NavBar = () => {
+	const { currentUser, showSignIn, setShowSignIn, showSignOut, setShowSignOut } = useContext(UserContext);
 	const scrollTo = (id: string) => {
 		const element = document.getElementById(id);
 		if (element) {
@@ -13,7 +15,23 @@ const NavBar = () => {
 		// var header = document.querySelector("header");
 		// header.classList.toggle("active");
 	}
-	const { currentUser } = useContext(UserContext);
+	useEffect(() => {
+		if (showSignIn) {
+			signInMessage("You are signed in");
+			setTimeout(() => {
+				clearSignInMessage()
+			}, 1000);
+			setShowSignIn(false);
+		}
+		if (showSignOut) {
+			signOutMessage("You are signed out");
+			setTimeout(() => {
+				clearSignOutMessage()
+			}, 1000);
+			setShowSignOut(false);
+		}
+	}, [currentUser])
+
 	const handleToggle = () => {
 		var header = document.querySelector("header");
 		header.classList.toggle("active");
@@ -22,6 +40,7 @@ const NavBar = () => {
 		<>
 			<header id="header">
 				<a href="#" className="logo">SCU Virtual Tours</a>
+				<a id="signintext" className="hidden"></a>
 				<ul>
 					<li>
 						<Link to='/' onClick={() => scrollTo("home")}>

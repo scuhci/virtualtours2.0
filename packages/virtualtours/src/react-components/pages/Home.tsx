@@ -1,9 +1,8 @@
 import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext"
-import { signInMessage, clearSignInMessage } from '../../util/msgUtil';
 const Home = () => {
-	const { currentUser, showSignIn, setShowSignIn } = useContext(UserContext);
+	const { currentUser } = useContext(UserContext);
 	useEffect(() => {
 		let id = window.location.href.split('/')[3];
 		if (id) id = id.substring(1);
@@ -12,21 +11,12 @@ const Home = () => {
 			const scrollDiv = element.offsetTop;
 			window.scrollTo({ top: scrollDiv, behavior: 'smooth' });
 		}
-		if (showSignIn) {
-			signInMessage("You are signed in");
-			setTimeout(() => {
-				clearSignInMessage()
-			}, 1000);
-			setShowSignIn(false);
-		}
-
 	}, [])
 
 
 	return (
 		<>
 			<div>
-				<div id="signintext" className="hidden"></div>
 				<section className="banner" id="home">
 					<div>
 						<h2><span>Santa Clara University</span></h2>

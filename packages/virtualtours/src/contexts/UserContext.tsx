@@ -4,8 +4,10 @@ import { createUserDocumentFromAuth, onAuthStateChangedListener } from '../util/
 export const UserContext = createContext({
     currentUser: null,
     showSignIn: false,
+    showSignOut: false,
     setCurrentUser: (() => null) as Dispatch<any>,
-    setShowSignIn: (() => false) as Dispatch<any>
+    setShowSignIn: (() => false) as Dispatch<any>,
+    setShowSignOut: (() => false) as Dispatch<any>
 })
 type UserProviderProps = {
     children: JSX.Element
@@ -14,12 +16,17 @@ type UserProviderProps = {
 export const UserProvider = ({ children }: UserProviderProps) => {
     const [currentUser, setCurrentUser] = useState(null);
     const [showSignIn, setShowSignIn] = useState(false);
-    const value = { currentUser, setCurrentUser, showSignIn, setShowSignIn };
+    const [showSignOut, setShowSignOut] = useState(false);
+    const value = { currentUser, setCurrentUser, showSignIn, setShowSignIn, showSignOut, setShowSignOut };
     useEffect(() => {
         const unsubscribe = onAuthStateChangedListener((user: any) => {
             if (user) {
                 setShowSignIn(true);
+                setShowSignOut(false);
                 createUserDocumentFromAuth(user);
+            } else {
+                setShowSignIn(false);
+                setShowSignOut(true);
             }
             setCurrentUser(user);
         });

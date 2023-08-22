@@ -73,15 +73,11 @@ header.sticky ul li a {
 
 /* ------------------- BANNER/HOMEPAGE ------------------- */
 #signintext {
-    background-color: #222222;
-    padding: 10px;
-    color: #f5f4f3;
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    border: 2px solid;
-    border-color: red;
-    font-size: 30px;
+    padding: 0rem 0rem 1rem 2.2rem;
+    color:  #950000;
+    position: relative;
+    left: 10%;
+    font-size: 1.3em;
     transform: translateX(-50%);
     z-index: 1000;
 }
