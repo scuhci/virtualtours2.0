@@ -1,8 +1,6 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "../../contexts/UserContext"
 const Home = () => {
-	const { currentUser } = useContext(UserContext);
 	useEffect(() => {
 		let id = window.location.href.split('/')[3];
 		if (id) id = id.substring(1);
@@ -45,12 +43,9 @@ const Home = () => {
 								<div className="content">
 									<h2>Cyle</h2>
 									<p>A little info describing tour.</p>
-									{currentUser && <Link className='btn' to='/tour?id=vari'>
+									<Link className='btn' to='/tour?id=vari'>
 										See Tour
-									</Link>}
-									{!currentUser && <Link className='btn' to='/login'>
-										Sign in to see the tours
-									</Link>}
+									</Link>
 								</div>
 							</div>
 							<div className="box">
@@ -60,12 +55,9 @@ const Home = () => {
 								<div className="content">
 									<h2>Kimberley</h2>
 									<p>A little info describing tour.</p>
-									{currentUser && <Link className='btn' to='/tour?id=scdi'>
+									<Link className='btn' to='/tour?id=scdi'>
 										See Tour
-									</Link>}
-									{!currentUser && <Link className='btn' to='/login'>
-										Sign in to see the tours
-									</Link>}
+									</Link>
 								</div>
 							</div>
 							<div className="box">
@@ -75,12 +67,9 @@ const Home = () => {
 								<div className="content">
 									<h2>Saunder</h2>
 									<p>A little info describing tour.</p>
-									{currentUser && <Link className='btn' to='/tour?id=heafy'>
+									<Link className='btn' to='/tour?id=heafy'>
 										See Tour
-									</Link>}
-									{!currentUser && <Link className='btn' to='/login'>
-										Sign in to see the tours
-									</Link>}
+									</Link>
 								</div>
 							</div>
 						</div>
