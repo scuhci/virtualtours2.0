@@ -96,6 +96,13 @@ export const getSCDIImage = (label: String): any => {
 		return important;
 	}
 	if (
+		label === "Why CS?" ||
+		label === "Why SCU?" ||
+		label === "What is it like being a transfer?"
+	) {
+		return blue;
+	}
+	if (
 		label === "SCDI -- Sobrato Campus for Discovery and Innovation" ||
 		label === "The Sunstream Café" ||
 		label === "Joseph & Chelsea Freeman Robotics Systems Lab" ||
