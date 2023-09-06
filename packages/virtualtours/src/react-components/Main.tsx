@@ -8,8 +8,6 @@ import { createSignClosure, signType } from "../scene-components/SignComponent";
 import { createPathClosure, pathType } from "../scene-components/FloorPathComponent";
 import { getModelSid } from '../util/assetUtil';
 import { addMattertagNodes, disableBGSoundForVideoTag } from '../util/matterTagsUtil';
-import { addGeoObject } from '../util/geoUtil';
-import { addSceneObject } from '../util/addSceneObjectUtil';
 import { deserializeSceneObjects } from '../util/deserializeUtil';
 import { enableSensors } from '../util/sensorUtil';
 import { getCurrentPos } from '../util/sweepUtil';
@@ -84,27 +82,27 @@ export class MainView extends Component<Props, State> {
       this.sdk.Scene.register(signType, createSignClosure(this.sdk)),
     ])
     //Create the 3D objects, add to scene. 
-    addSceneObject(this.sdk, 'mp.gltfLoader', 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/gltf/Parrot.glb', {
-      x: 0.01,
-      y: 0.01,
-      z: 0.01,
-    }, { x: -32.678383074276525, y: 1.3582876760621081, z: -24.83219463891109 });
-    addSceneObject(this.sdk, 'mp.fbxLoader', 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/fbx/stanford-bunny.fbx', {
-      x: 0.00001,
-      y: 0.00001,
-      z: 0.00001,
-    }, { x: -32.678383074276525, y: 0.3582876760621081, z: -26.83219463891109 });
-    addSceneObject(this.sdk, 'mp.gltfLoader', 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/gltf/Stork.glb', {
-      x: 0.01,
-      y: 0.01,
-      z: 0.01,
-    }, {
-      x: 1.2523820905004721,
-      y: 1.95019005476538944,
-      z: 4.932051502749859,
-    });
+    // addSceneObject(this.sdk, 'mp.gltfLoader', 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/gltf/Parrot.glb', {
+    //   x: 0.01,
+    //   y: 0.01,
+    //   z: 0.01,
+    // }, { x: -32.678383074276525, y: 1.3582876760621081, z: -24.83219463891109 });
+    // addSceneObject(this.sdk, 'mp.fbxLoader', 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/fbx/stanford-bunny.fbx', {
+    //   x: 0.00001,
+    //   y: 0.00001,
+    //   z: 0.00001,
+    // }, { x: -32.678383074276525, y: 0.3582876760621081, z: -26.83219463891109 });
+    // addSceneObject(this.sdk, 'mp.gltfLoader', 'https://cdn.jsdelivr.net/gh/mrdoob/three.js@dev/examples/models/gltf/Stork.glb', {
+    //   x: 0.01,
+    //   y: 0.01,
+    //   z: 0.01,
+    // }, {
+    //   x: 1.2523820905004721,
+    //   y: 1.95019005476538944,
+    //   z: 4.932051502749859,
+    // });
     //Create the spinning knot at start. 
-    addGeoObject(this.sdk);
+    // addGeoObject(this.sdk);
 
 
     //Turns off background noise when hovering over a tag with a video
