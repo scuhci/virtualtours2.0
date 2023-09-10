@@ -230,8 +230,8 @@
           "height": 1,
           "pRotationY": -3.14,
           "pRotationZ": -3.14,
-          "mRotationX": -3.14,
-          "mRotationY": 1.596785
+          "mRotationX": 3.14,
+          "mRotationY": 0.52
         },
         "events": {
           "INTERACTION.CLICK": true,
