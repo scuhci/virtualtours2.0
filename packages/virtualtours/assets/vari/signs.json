@@ -172,7 +172,7 @@
         }
       }]   
     },{
-      "name": "maintour_sign",
+      "name": "maintour_sign_past",
       "position": {
         "x": -33.178383074276525,
         "y": 1.5618881797800000,
@@ -191,7 +191,7 @@
       "components": [{
         "type": "vt.sign",
         "inputs": {
-          "image": "MainTour.png",
+          "image": "past.png",
           "width": 1,
           "height": 0.3,
           "pRotationY": -3.14,
