@@ -225,7 +225,7 @@
       "components": [{
         "type": "vt.sign",
         "inputs": {
-          "image": "hoverovertags.png",
+          "image": "HoverOverTags.png.png",
           "width": 2,
           "height": 1,
           "pRotationY": -3.14,
