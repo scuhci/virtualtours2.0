@@ -137,7 +137,7 @@
           "INTERACTION.DRAG": false
         }
       }]   
-    }, {
+    },{
       "name": "mainstory_sign",
       "position": {
         "x": -22.19006022089588,
@@ -164,6 +164,74 @@
           "pRotationZ": -3.14,
           "mRotationX": -3.14,
           "mRotationY": 1.596785
+        },
+        "events": {
+          "INTERACTION.CLICK": true,
+          "INTERACTION.HOVER": true,
+          "INTERACTION.DRAG": false
+        }
+      }]   
+    },{
+      "name": "maintourtakes_sign",
+      "position": {
+        "x": -33.178383074276525,
+        "y": 1.5618881797800000,
+        "z":-28.83219463891109
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "components": [{
+        "type": "vt.sign",
+        "inputs": {
+          "image": "maintourtakes.png",
+          "width": 1,
+          "height": 0.3,
+          "pRotationY": -3.14,
+          "pRotationZ": -3.14,
+          "mRotationX": 3.14,
+          "mRotationY": 0.52
+        },
+        "events": {
+          "INTERACTION.CLICK": true,
+          "INTERACTION.HOVER": true,
+          "INTERACTION.DRAG": false
+        }
+      }]   
+    },{
+      "name": "hoverovertags_sign",
+      "position": {
+        "x": -33.178383074276525,
+        "y": 0.55594408989,
+        "z":-28.83219463891109
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "components": [{
+        "type": "vt.sign",
+        "inputs": {
+          "image": "HoverOverTags.png",
+          "width": 2,
+          "height": 1,
+          "pRotationY": -3.14,
+          "pRotationZ": -3.14,
+          "mRotationX": 3.14,
+          "mRotationY": 0.52
         },
         "events": {
           "INTERACTION.CLICK": true,
