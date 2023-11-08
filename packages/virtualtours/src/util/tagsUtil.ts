@@ -104,7 +104,7 @@ export const getSCDIImage = (label: String): any => {
 	}
 	if (
 		label === "SCDI -- Sobrato Campus for Discovery and Innovation" ||
-		label === "The Sunstream Café" ||
+		label === "FreshBytes" ||
 		label === "Joseph & Chelsea Freeman Robotics Systems Lab" ||
 		label === "DISC - Diversity and Inclusion Student Center"
 	) {
